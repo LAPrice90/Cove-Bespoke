@@ -1,0 +1,76 @@
+.signature-carousel {
+  background-color: var(--c-bg);
+  padding-block: var(--space-7);
+}
+.signature-carousel .carousel-inner {
+  max-width: 60rem;
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+.signature-carousel h2 {
+  font-family: var(--font-serif);
+  font-size: var(--fs-900);
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+.signature-carousel .carousel-track {
+  display: flex;
+  gap: var(--space-6);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+.signature-carousel .carousel-track::-webkit-scrollbar {
+  display: none;
+}
+.signature-carousel .carousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+}
+.signature-carousel .carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-soft);
+}
+.signature-carousel .slide-text {
+  margin-top: var(--space-4);
+  text-align: center;
+}
+.signature-carousel .slide-text h3 {
+  font-family: var(--font-serif);
+  font-size: var(--fs-700);
+  margin-bottom: var(--space-2);
+}
+.signature-carousel .slide-text p {
+  font-family: var(--font-sans);
+  font-size: var(--fs-400);
+  color: var(--c-muted);
+  margin: 0;
+}
+.signature-carousel .carousel-controls {
+  margin-top: var(--space-5);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+}
+.signature-carousel .carousel-btn {
+  background: var(--c-accent);
+  color: var(--c-surface);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.signature-carousel .carousel-btn:hover {
+  background: var(--c-accent-light);
+}
+@media (min-width: 48rem) {
+  .signature-carousel .carousel-slide {
+    flex: 0 0 calc(50% - var(--space-6));
+  }
+}
