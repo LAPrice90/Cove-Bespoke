@@ -1,1 +1,174 @@
-<!-- Ready -->
+<!-- ==========================================================
+     Cove Bespoke – Footer Component (desktop & mobile)
+     ----------------------------------------------------------
+     * Depends on colour & typography vars from base.css
+     * Uses .btn--primary from buttons.css if newsletter CTA added
+     * Scoped CSS below; move to /footer/style.css if you prefer
+     * Author: ChatGPT (o3) – v1.0 2025‑07‑03
+     ========================================================== -->
+
+<footer class="site-footer" aria-labelledby="footer-heading">
+  <div class="footer-inner">
+
+    <!-- Top row: Logo + short statement (optional) -->
+    <div class="footer-brand">
+      <img src="/images/logo.svg" alt="Cove Bespoke logo" class="footer-logo" />
+      <p class="footer-tagline">Bespoke kitchens &amp; interiors, crafted for life.</p>
+    </div>
+
+    <!-- Middle row: Navigation links -->
+    <nav class="footer-nav" aria-label="Footer">
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/portfolio.html">Portfolio</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/journal.html">Journal</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Bottom row: Contact & legal -->
+    <div class="footer-meta">
+      <address>
+        <a href="mailto:hello@covebespoke.ie">hello@covebespoke.ie</a><br />
+        +353 (0)12 345 678 • Dublin, Ireland
+      </address>
+
+      <p class="footer-legal">
+        © <span id="year">2025</span> Cove Bespoke. All rights reserved.
+        <span class="pipe">|</span>
+        <a href="/privacy-policy.html">Privacy&nbsp;Policy</a>
+        <span class="pipe">|</span>
+        <a href="/terms.html">Terms&nbsp;of&nbsp;Service</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scoped footer styles ================================================= -->
+<style>
+  .site-footer {
+    background: var(--c-bg);
+    color: var(--c-text);
+    padding-block: 4rem 3rem; /* 64px / 48px */
+    font-size: var(--fs-400); /* body size */
+    line-height: 1.6;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  /* Brand */
+  .footer-logo {
+    height: 40px;
+    width: auto;
+    margin-inline: auto;
+  }
+  .footer-tagline {
+    font-family: "DM Serif Display", serif;
+    font-size: var(--fs-600);
+    margin-block-start: 1rem;
+    letter-spacing: 0.01em;
+  }
+
+  /* Nav links */
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem; /* 24px */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .footer-links a {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    color: var(--c-text);
+    transition: color 0.2s ease;
+  }
+  .footer-links a:hover,
+  .footer-links a:focus-visible {
+    color: var(--c-accent);
+  }
+
+  /* Contact & legal */
+  .footer-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  address {
+    font-style: normal;
+  }
+  address a {
+    color: var(--c-text);
+    text-decoration: none;
+  }
+  address a:hover {
+    color: var(--c-accent);
+  }
+  .footer-legal {
+    font-size: var(--fs-300);
+    color: var(--c-muted);
+  }
+  .footer-legal a {
+    color: var(--c-muted);
+    text-decoration: none;
+  }
+  .footer-legal a:hover {
+    color: var(--c-accent);
+  }
+  .pipe {
+    display: inline-block;
+    margin-inline: 0.5rem;
+  }
+
+  /* Responsive adjustments */
+  @media (min-width: 48em) {
+    /* >=768px: spread into rows */
+    .footer-inner {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      text-align: left;
+      gap: 2rem;
+    }
+    .footer-brand {
+      flex: 1 1 25%;
+    }
+    .footer-nav {
+      flex: 1 1 35%;
+    }
+    .footer-meta {
+      flex: 1 1 30%;
+      align-items: flex-end;
+      text-align: right;
+    }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+
+<!-- Year auto-update (optional) -->
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
