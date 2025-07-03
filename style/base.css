@@ -55,18 +55,6 @@
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --c-bg:           #10100F;
-    --c-surface:      #1A1A18;
-    --c-text:         #E5E5E0;
-    --c-muted:        #A5A598;
-    --c-accent:       #4A6A6A;
-    --c-accent-light: #5C7A7A;
-    color-scheme: dark;
-  }
-}
-
 /* -----------------------------------------------------------
    Global resets
    -------------------------------------------------------- */
