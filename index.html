@@ -15,6 +15,7 @@
 </head>
 <body>
   <div id="header-placeholder"></div>
+  <div id="hero-placeholder"></div>
   <main class="content">
     <h1>Welcome to Cove Bespoke</h1>
     <p>Bespoke kitchens and interiors, crafted for life.</p>
@@ -56,6 +57,7 @@
         .catch(err => console.error('Failed to load', url, err));
     }
     loadPartial('header/header.html', 'header-placeholder');
+    loadPartial('sections/hero/hero.html', 'hero-placeholder');
     loadPartial('footer/footer.html', 'footer-placeholder');
   </script>
 </body>
