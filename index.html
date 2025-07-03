@@ -1,4 +1,40 @@
-<!-- Ready -->
-markdown
-Copy
-Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cove Bespoke</title>
+  <link rel="stylesheet" href="style/base.css">
+  <link rel="stylesheet" href="style/buttons.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <main class="content">
+    <h1>Welcome to Cove Bespoke</h1>
+    <p>Bespoke kitchens and interiors, crafted for life.</p>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script>
+    function loadPartial(url, placeholderId) {
+      fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const fragment = document.createDocumentFragment();
+          doc.body.childNodes.forEach(node => fragment.appendChild(node.cloneNode(true)));
+          const placeholder = document.getElementById(placeholderId);
+          placeholder.replaceWith(fragment);
+          doc.querySelectorAll('script').forEach(src => {
+            const s = document.createElement('script');
+            if (src.src) { s.src = src.src; } else { s.textContent = src.textContent; }
+            document.body.appendChild(s);
+          });
+        })
+        .catch(err => console.error('Failed to load', url, err));
+    }
+    loadPartial('header/header.html', 'header-placeholder');
+    loadPartial('footer/footer.html', 'footer-placeholder');
+  </script>
+</body>
+</html>
