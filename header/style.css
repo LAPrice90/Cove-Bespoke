@@ -1,1 +1,142 @@
-/* Ready */
+/* -----------------------------------------------
+   Header / Navigation styles – SCOPED
+   (move to header/style.css in final build)
+------------------------------------------------*/
+
+/* -------- Layout shell -------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--c-bg);
+  padding-block: 0.75rem; /* 12px */
+  transition: box-shadow 0.3s ease;
+}
+.site-header.is-elevated {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Flex container */
+.header-inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1rem; /* responsive gutter */
+}
+
+/* -------- Logo -------- */
+.header-logo {
+  display: inline-block;
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  color: var(--c-accent);
+  letter-spacing: 0.015em;
+  text-decoration: none;
+}
+
+/* -------- Nav -------- */
+.primary-nav {
+  display: flex;
+  gap: 1.5rem; /* 24px spacing */
+  align-items: center;
+}
+.primary-nav a {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem; /* 14px */
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--c-text);
+  position: relative;
+}
+.primary-nav a::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: -4px;
+  height: 1px;
+  background-color: var(--c-accent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.primary-nav a:hover::after {
+  opacity: 1;
+}
+
+/* -------- CTA button (already styled in buttons.css) -------- */
+.header-cta {
+  margin-left: 1rem;
+}
+
+/* -------- Hamburger (mobile) -------- */
+.hamburger {
+  --line-w: 24px;
+  --line-h: 2px;
+  --gap: 6px;
+  width: var(--line-w);
+  height: calc(var(--line-h) * 3 + var(--gap) * 2);
+  display: none; /* hidden on desktop */
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: var(--line-h);
+  background: var(--c-text);
+  border-radius: 1px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.hamburger span:nth-child(2) {
+  margin-block: var(--gap);
+}
+/* open state */
+.hamburger.is-active span:nth-child(1) {
+  transform: translateY(calc(var(--gap) + var(--line-h))) rotate(45deg);
+}
+.hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-active span:nth-child(3) {
+  transform: translateY(calc(-1 * (var(--gap) + var(--line-h)))) rotate(-45deg);
+}
+
+/* -------- Mobile menu (drawer) -------- */
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  background: var(--c-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+}
+.mobile-nav.is-open {
+  transform: translateX(0);
+}
+.mobile-nav a {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem; /* 20px */
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--c-text);
+}
+.mobile-nav .btn {
+  margin-top: 2rem;
+}
+
+/* -------- Breakpoints -------- */
+@media (max-width: 768px) {
+  .primary-nav,
+  .header-cta {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}
