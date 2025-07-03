@@ -69,6 +69,28 @@
           document.body.classList.toggle('no-scroll');
         });
 
+        // Close drawer on swipe right
+        let startX = 0;
+        mobileNav.addEventListener(
+          'touchstart',
+          e => {
+            startX = e.touches[0].clientX;
+          },
+          { passive: true }
+        );
+        mobileNav.addEventListener(
+          'touchend',
+          e => {
+            const endX = e.changedTouches[0].clientX;
+            if (endX - startX > 50) {
+              burger.classList.remove('is-active');
+              mobileNav.classList.remove('is-open');
+              document.body.classList.remove('no-scroll');
+            }
+          },
+          { passive: true }
+        );
+
         // Scroll elevation effect
         window.addEventListener('scroll', () => {
           const curr = window.scrollY;
