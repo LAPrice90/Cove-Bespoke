@@ -49,8 +49,14 @@
   --space-7: 3rem;
   --space-8: 4rem;
 
+  /* Aliases for component spacing scale */
+  --space-200: var(--space-2);
+  --space-300: var(--space-3);
+  --space-500: var(--space-5);
+
   /* Radius */
   --radius-soft: 0.5rem;
+  --radius-md: 0.5rem;
 
   color-scheme: light;
 }
