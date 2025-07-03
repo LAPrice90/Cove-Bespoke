@@ -1,6 +1,6 @@
 .hero-section {
   position: relative;
-  background: url('/images/projects/foxrock/cover.jpg') center/cover no-repeat;
+  background: url('/images/index-hero.png') center/cover no-repeat;
   color: var(--c-surface);
   min-height: 100vh;
   display: flex;
