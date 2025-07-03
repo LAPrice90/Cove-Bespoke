@@ -1,6 +1,5 @@
 .hero-section {
   position: relative;
-  background: url('/images/index-hero.png') center/cover no-repeat;
   color: var(--c-surface);
   min-height: 100vh;
   display: flex;
@@ -8,6 +7,16 @@
   justify-content: center;
   text-align: center;
   padding: var(--space-700) var(--space-400);
+  overflow: hidden;
+}
+
+.hero-section img.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .hero-section::before {
