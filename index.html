@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="style/animations.css">
   <link rel="stylesheet" href="sections/hero/style.css">
   <link rel="stylesheet" href="sections/statement/style.css">
+  <link rel="stylesheet" href="sections/signature-carousel/style.css">
 </head>
 <body>
   <div id="header-placeholder"></div>
@@ -30,6 +31,45 @@
       <h2>Crafted&nbsp;for&nbsp;Life</h2>
       <p>Every Cove Bespoke kitchen and interior is made to stand the test of time, blending timeless design with meticulous craftsmanship.</p>
       <a href="/portfolio.html" class="btn btn--primary">Explore&nbsp;Our&nbsp;Projects</a>
+    </div>
+  </section>
+  <section class="signature-carousel" id="signature-collection">
+    <div class="carousel-inner">
+      <h2>Signature Collection</h2>
+      <div class="carousel-track" data-js="signature-track">
+        <article class="carousel-slide">
+          <img src="images/index-hero.png" alt="Modern Coastal Retreat" />
+          <div class="slide-text">
+            <h3>Modern Coastal Retreat</h3>
+            <p>Sleek lines and serene sea hues.</p>
+          </div>
+        </article>
+        <article class="carousel-slide">
+          <img src="images/index-hero.png" alt="Refined Urban Classic" />
+          <div class="slide-text">
+            <h3>Refined Urban Classic</h3>
+            <p>Tailored cabinetry with timeless appeal.</p>
+          </div>
+        </article>
+        <article class="carousel-slide">
+          <img src="images/index-hero.png" alt="Light-Filled Family Hub" />
+          <div class="slide-text">
+            <h3>Light-Filled Family Hub</h3>
+            <p>An inviting space for everyday living.</p>
+          </div>
+        </article>
+        <article class="carousel-slide">
+          <img src="images/index-hero.png" alt="Tailored Heritage Revival" />
+          <div class="slide-text">
+            <h3>Tailored Heritage Revival</h3>
+            <p>Classic forms with modern functionality.</p>
+          </div>
+        </article>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" data-js="carousel-prev" aria-label="Previous">&#10094;</button>
+        <button class="carousel-btn" data-js="carousel-next" aria-label="Next">&#10095;</button>
+      </div>
     </div>
   </section>
   <div id="footer-placeholder"></div>
@@ -70,6 +110,32 @@
     }
     loadPartial('header/header.html', 'header-placeholder');
     loadPartial('footer/footer.html', 'footer-placeholder');
+
+    const track = document.querySelector('[data-js="signature-track"]');
+    const prev = document.querySelector('[data-js="carousel-prev"]');
+    const next = document.querySelector('[data-js="carousel-next"]');
+    if (track) {
+      const slideWidth = () => track.clientWidth;
+      prev.addEventListener('click', () => {
+        track.scrollBy({ left: -slideWidth(), behavior: 'smooth' });
+      });
+      next.addEventListener('click', () => {
+        track.scrollBy({ left: slideWidth(), behavior: 'smooth' });
+      });
+      let startX = 0;
+      track.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+      }, { passive: true });
+      track.addEventListener('touchend', e => {
+        const delta = startX - e.changedTouches[0].clientX;
+        if (delta > 50) {
+          track.scrollBy({ left: slideWidth(), behavior: 'smooth' });
+        }
+        if (delta < -50) {
+          track.scrollBy({ left: -slideWidth(), behavior: 'smooth' });
+        }
+      }, { passive: true });
+    }
   </script>
 </body>
 </html>
