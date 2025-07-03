@@ -12,10 +12,18 @@
   <link rel="stylesheet" href="style/buttons.css">
   <link rel="stylesheet" href="style/forms.css">
   <link rel="stylesheet" href="style/animations.css">
+  <link rel="stylesheet" href="sections/hero/style.css">
 </head>
 <body>
   <div id="header-placeholder"></div>
-  <div id="hero-placeholder"></div>
+  <section class="hero-section">
+    <img class="hero-bg" src="images/index-hero.png" alt="" />
+    <div class="hero-content">
+      <h1>Bespoke Kitchens & Interiors, Crafted for Life.</h1>
+      <p>Discover a seamless journey to a space that is uniquely yours.</p>
+      <a href="/contact.html" class="btn btn--primary">Begin Your Journey</a>
+    </div>
+  </section>
   <div id="footer-placeholder"></div>
   <script>
     function loadPartial(url, placeholderId) {
@@ -53,7 +61,6 @@
         .catch(err => console.error('Failed to load', url, err));
     }
     loadPartial('header/header.html', 'header-placeholder');
-    loadPartial('sections/hero/hero.html', 'hero-placeholder');
     loadPartial('footer/footer.html', 'footer-placeholder');
   </script>
 </body>
