@@ -8,7 +8,8 @@
 .crafted-statement {
   background: var(--c-bg);
   color: var(--c-text);
-  padding-block: var(--space-700);
+  /* correct spacing variable names */
+  padding-block: var(--space-7);
   text-align: center;
   display: flex;
   align-items: center;
@@ -17,25 +18,25 @@
 
 .statement-inner {
   max-width: 42rem;
-  padding-inline: var(--space-400);
+  padding-inline: var(--space-4);
 }
 
 .crafted-statement h2 {
   font-family: var(--font-serif);
   font-size: clamp(2rem, 5vw, 3rem);
   line-height: 1.15;
-  margin-bottom: var(--space-400);
+  margin-bottom: var(--space-4);
 }
 
 .crafted-statement p {
   font-family: var(--font-sans);
   font-size: clamp(1rem, 2.25vw, 1.125rem);
   line-height: 1.55;
-  margin-bottom: var(--space-500);
+  margin-bottom: var(--space-5);
 }
 
 @media (min-width: 48rem) {
   .crafted-statement {
-    padding-block: var(--space-800);
+    padding-block: var(--space-8);
   }
 }

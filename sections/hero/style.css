@@ -6,7 +6,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: var(--space-700) var(--space-400);
+  /* use base spacing variables for consistent vertical rhythm */
+  padding: var(--space-7) var(--space-4);
   overflow: hidden;
 }
 
@@ -37,14 +38,14 @@
   font-family: var(--font-serif);
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1.1;
-  margin-bottom: var(--space-400);
+  margin-bottom: var(--space-4);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .hero-content p {
   font-family: var(--font-sans);
   font-size: clamp(1rem, 2.5vw, 1.25rem);
-  margin-bottom: var(--space-500);
+  margin-bottom: var(--space-5);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
@@ -54,7 +55,7 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    padding: var(--space-600) var(--space-300);
+    padding: var(--space-6) var(--space-3);
     min-height: 80vh;
   }
 }
