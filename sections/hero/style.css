@@ -1,1 +1,44 @@
-/* Ready */
+.hero-section {
+  position: relative;
+  background: url('/images/projects/foxrock/cover.jpg') center/cover no-repeat;
+  color: var(--c-surface);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-700) var(--space-400);
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 800px;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: var(--space-400);
+}
+
+.hero-content p {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  margin-bottom: var(--space-500);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: var(--space-600) var(--space-300);
+    min-height: 80vh;
+  }
+}
