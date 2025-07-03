@@ -108,6 +108,7 @@
 .mobile-nav {
   position: fixed;
   inset: 0;
+  z-index: 1100;
   background: var(--c-bg);
   display: flex;
   flex-direction: column;
