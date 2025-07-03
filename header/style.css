@@ -7,7 +7,8 @@
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  /* Ensure header and its children sit above the mobile drawer */
+  z-index: 1400;
   background-color: var(--c-bg);
   padding-block: 0.75rem; /* 12px */
   transition: box-shadow 0.3s ease;
