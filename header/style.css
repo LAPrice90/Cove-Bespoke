@@ -79,6 +79,8 @@
   height: calc(var(--line-h) * 3 + var(--gap) * 2);
   display: none; /* hidden on desktop */
   cursor: pointer;
+  background: none;
+  border: none;
 }
 .hamburger span {
   display: block;

@@ -23,13 +23,14 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.45);
 }
 
 .hero-content {
   position: relative;
   max-width: 800px;
   z-index: 1;
+  color: var(--c-surface);
 }
 
 .hero-content h1 {
@@ -37,12 +38,18 @@
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1.1;
   margin-bottom: var(--space-400);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .hero-content p {
   font-family: var(--font-sans);
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   margin-bottom: var(--space-500);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.hero-content a {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 768px) {
