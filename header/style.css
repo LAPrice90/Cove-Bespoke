@@ -68,9 +68,6 @@
 }
 
 /* -------- CTA button (already styled in buttons.css) -------- */
-.header-cta {
-  margin-left: 1rem;
-}
 
 /* -------- Hamburger (mobile) -------- */
 .hamburger {
@@ -137,14 +134,10 @@ body.no-scroll {
   text-decoration: none;
   color: var(--c-text);
 }
-#mobile-drawer .btn {
-  margin-top: 2rem;
-}
 
 /* -------- Breakpoints -------- */
 @media (max-width: 1024px) {
-  .primary-nav,
-  .header-cta {
+  .primary-nav {
     display: none;
   }
   .hamburger {
