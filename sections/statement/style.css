@@ -1,1 +1,41 @@
-/* Ready */
+/* ==========================================================
+   Cove Bespoke – "Crafted for Life" Statement Styles
+   ----------------------------------------------------------
+   Styles for succinct brand ethos block on the home page
+   Uses base.css variables and fluid typography
+   ========================================================== */
+
+.crafted-statement {
+  background: var(--c-bg);
+  color: var(--c-text);
+  padding-block: var(--space-700);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statement-inner {
+  max-width: 42rem;
+  padding-inline: var(--space-400);
+}
+
+.crafted-statement h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: var(--space-400);
+}
+
+.crafted-statement p {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 2.25vw, 1.125rem);
+  line-height: 1.55;
+  margin-bottom: var(--space-500);
+}
+
+@media (min-width: 48rem) {
+  .crafted-statement {
+    padding-block: var(--space-800);
+  }
+}
