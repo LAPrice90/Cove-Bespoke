@@ -31,6 +31,22 @@
           doc.body.childNodes.forEach(node => fragment.appendChild(node.cloneNode(true)));
           const placeholder = document.getElementById(placeholderId);
           placeholder.replaceWith(fragment);
+
+          // Include any stylesheets from the partial's <head>
+          doc.head
+            .querySelectorAll('link[rel="stylesheet"], style')
+            .forEach(el => {
+              const clone = el.cloneNode(true);
+              if (el.tagName.toLowerCase() === 'link') {
+                const exists = Array.from(document.head.querySelectorAll('link'))
+                  .some(l => l.href === clone.href);
+                if (!exists) document.head.appendChild(clone);
+              } else {
+                document.head.appendChild(clone);
+              }
+            });
+
+          // Re-execute any inline or external scripts
           doc.querySelectorAll('script').forEach(src => {
             const s = document.createElement('script');
             if (src.src) { s.src = src.src; } else { s.textContent = src.textContent; }
