@@ -24,7 +24,11 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  /* slightly stronger gradient for readability */
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.45)
+  );
 }
 
 .hero-content {
@@ -39,14 +43,16 @@
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1.1;
   margin-bottom: var(--space-4);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
 .hero-content p {
   font-family: var(--font-sans);
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   margin-bottom: var(--space-5);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content a {
