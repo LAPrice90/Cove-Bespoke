@@ -56,19 +56,6 @@
   justify-content: center;
   gap: var(--space-4);
 }
-.signature-carousel .carousel-btn {
-  background: var(--c-accent);
-  color: var(--c-surface);
-  border: none;
-  border-radius: var(--radius-md);
-  padding: 0.5rem 1rem;
-  font-size: 1.25rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-.signature-carousel .carousel-btn:hover {
-  background: var(--c-accent-light);
-}
 @media (min-width: 48rem) {
   .signature-carousel .carousel-slide {
     flex: 0 0 calc(50% - var(--space-6));
