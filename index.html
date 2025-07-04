@@ -67,8 +67,7 @@
         </article>
       </div>
       <div class="carousel-controls">
-        <button class="carousel-btn" data-js="carousel-prev" aria-label="Previous">&#10094;</button>
-        <button class="carousel-btn" data-js="carousel-next" aria-label="Next">&#10095;</button>
+        <a href="/portfolio.html" class="btn btn--primary">View Portfolio</a>
       </div>
     </div>
   </section>
@@ -112,28 +111,23 @@
     loadPartial('footer/footer.html', 'footer-placeholder');
 
     const track = document.querySelector('[data-js="signature-track"]');
-    const prev = document.querySelector('[data-js="carousel-prev"]');
-    const next = document.querySelector('[data-js="carousel-next"]');
     if (track) {
-      const slideWidth = () => track.clientWidth;
-      prev.addEventListener('click', () => {
-        track.scrollBy({ left: -slideWidth(), behavior: 'smooth' });
-      });
-      next.addEventListener('click', () => {
-        track.scrollBy({ left: slideWidth(), behavior: 'smooth' });
-      });
+      const slide = track.querySelector('.carousel-slide');
+      const gap = parseFloat(getComputedStyle(track).gap) || 0;
+      const slideWidth = () => slide.clientWidth + gap;
+      function scrollByAmount(amount) {
+        const max = track.scrollWidth - track.clientWidth;
+        const dest = Math.min(Math.max(track.scrollLeft + amount, 0), max);
+        track.scrollTo({ left: dest, behavior: 'smooth' });
+      }
       let startX = 0;
       track.addEventListener('touchstart', e => {
         startX = e.touches[0].clientX;
       }, { passive: true });
       track.addEventListener('touchend', e => {
         const delta = startX - e.changedTouches[0].clientX;
-        if (delta > 50) {
-          track.scrollBy({ left: slideWidth(), behavior: 'smooth' });
-        }
-        if (delta < -50) {
-          track.scrollBy({ left: -slideWidth(), behavior: 'smooth' });
-        }
+        if (delta > 50) scrollByAmount(slideWidth());
+        if (delta < -50) scrollByAmount(-slideWidth());
       }, { passive: true });
     }
   </script>
