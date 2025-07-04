@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="sections/statement/style.css">
   <link rel="stylesheet" href="sections/signature-carousel/style.css">
   <link rel="stylesheet" href="sections/feature-grid/style.css">
+  <link rel="stylesheet" href="sections/testimonials/style.css">
 </head>
 <body>
   <div id="header-placeholder"></div>
@@ -95,6 +96,37 @@
       </div>
     </div>
   </section>
+  <section class="testimonials-strip" id="testimonials">
+    <div class="testimonials-inner">
+      <h2>What Clients Say</h2>
+      <div class="testimonials-grid">
+        <figure class="testimonial" data-fade>
+          <blockquote>
+            <p>“Cove Bespoke transformed our period townhouse – every detail exudes craftsmanship.”</p>
+          </blockquote>
+          <figcaption>James &amp; Olivia, Harrogate</figcaption>
+        </figure>
+        <figure class="testimonial" data-fade>
+          <blockquote>
+            <p>“The ultimate luxury kitchen – both functional and sublime.”</p>
+          </blockquote>
+          <figcaption><em>Interiors Monthly</em></figcaption>
+        </figure>
+        <figure class="testimonial" data-fade>
+          <blockquote>
+            <p>“Their personalised service made the renovation effortless.”</p>
+          </blockquote>
+          <figcaption>Sophia L., Chelsea</figcaption>
+        </figure>
+        <figure class="testimonial" data-fade>
+          <blockquote>
+            <p>“A benchmark for quiet elegance and timeless design.”</p>
+          </blockquote>
+          <figcaption><em>Architectural Digest</em></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
   <div id="footer-placeholder"></div>
   <script>
     function loadPartial(url, placeholderId) {
@@ -154,6 +186,17 @@
         if (delta < -50) scrollByAmount(-slideWidth());
       }, { passive: true });
     }
+    document.querySelectorAll("[data-fade]").forEach(el => {
+      const ob = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-visible");
+            ob.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      ob.observe(el);
+    });
   </script>
 </body>
 </html>
