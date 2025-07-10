@@ -3,9 +3,17 @@
   padding-block: var(--space-7);
 }
 .signature-carousel .carousel-inner {
-  max-width: 60rem;
-  margin-inline: auto;
-  padding-inline: var(--space-4);
+  width: 100%;
+  margin-inline: 0;
+  padding-inline: 0;
+}
+
+@media (min-width: 48rem) {
+  .signature-carousel .carousel-inner {
+    max-width: 60rem;
+    margin-inline: auto;
+    padding-inline: var(--space-4);
+  }
 }
 .signature-carousel h2 {
   font-family: var(--font-serif);
