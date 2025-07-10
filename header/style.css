@@ -38,6 +38,11 @@
   position: relative;
   z-index: 1400;
 }
+.header-logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
 
 /* -------- Nav -------- */
 .primary-nav {
