@@ -65,9 +65,7 @@
 
 .signature-carousel .carousel-slide img {
   width: 100%;
-  height: auto;
-  max-height: 65vh;
-  flex-grow: 1;
+  height: 20rem; /* lock image height for uniform slides */
   object-fit: cover;
   display: block;
   border-radius: var(--radius-soft);
