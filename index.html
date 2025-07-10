@@ -36,45 +36,45 @@
     </div>
   </section>
   <section class="signature-carousel" id="signature-collection">
-    <div class="carousel-inner">
+    <div class="signature-carousel__inner">
       <h2>Signature Collection</h2>
-      <div class="carousel-track" data-js="signature-track">
-        <article class="carousel-slide">
+      <div class="signature-carousel__track" data-js="signature-track">
+        <article class="signature-carousel__slide">
           <img src="images/index-hero.png" alt="Modern Coastal Retreat" />
-          <div class="slide-text">
+          <div class="signature-carousel__text">
             <h3>Modern Coastal Retreat</h3>
             <p>Sleek lines and serene sea hues.</p>
           </div>
         </article>
-        <article class="carousel-slide">
+        <article class="signature-carousel__slide">
           <img src="images/index-hero.png" alt="Refined Urban Classic" />
-          <div class="slide-text">
+          <div class="signature-carousel__text">
             <h3>Refined Urban Classic</h3>
             <p>Tailored cabinetry with timeless appeal.</p>
           </div>
         </article>
-        <article class="carousel-slide">
+        <article class="signature-carousel__slide">
           <img src="images/index-hero.png" alt="Light-Filled Family Hub" />
-          <div class="slide-text">
+          <div class="signature-carousel__text">
             <h3>Light-Filled Family Hub</h3>
             <p>An inviting space for everyday living.</p>
           </div>
         </article>
-        <article class="carousel-slide">
+        <article class="signature-carousel__slide">
           <img src="images/index-hero.png" alt="Tailored Heritage Revival" />
-          <div class="slide-text">
+          <div class="signature-carousel__text">
             <h3>Tailored Heritage Revival</h3>
             <p>Classic forms with modern functionality.</p>
           </div>
         </article>
       </div>
-      <div class="carousel-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+      <div class="signature-carousel__dots">
+        <span class="signature-carousel__dot is-active"></span>
+        <span class="signature-carousel__dot"></span>
+        <span class="signature-carousel__dot"></span>
+        <span class="signature-carousel__dot"></span>
       </div>
-      <div class="carousel-controls">
+      <div class="signature-carousel__controls">
         <a href="/portfolio.html" class="btn btn--primary">View Portfolio</a>
       </div>
     </div>
@@ -176,8 +176,8 @@
 
     const track = document.querySelector('[data-js="signature-track"]');
     if (track) {
-      const slides = Array.from(track.querySelectorAll('.carousel-slide'));
-      const dots = Array.from(document.querySelectorAll('.carousel-dots .dot'));
+      const slides = Array.from(track.querySelectorAll('.signature-carousel__slide'));
+      const dots = Array.from(document.querySelectorAll('.signature-carousel__dot'));
       const gap = parseFloat(getComputedStyle(track).gap) || 0;
 
       const slideWidth = () => slides[0].clientWidth + gap;
@@ -198,7 +198,7 @@
             closest = idx;
           }
         });
-        dots.forEach((d, i) => d.classList.toggle('active', i === closest));
+        dots.forEach((d, i) => d.classList.toggle('is-active', i === closest));
       }
       track.addEventListener('scroll', updateDots);
       window.addEventListener('resize', updateDots);
