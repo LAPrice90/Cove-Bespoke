@@ -2,6 +2,7 @@
   position: relative;
   color: var(--c-surface);
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,5 +64,6 @@
   .hero-section {
     padding: var(--space-6) var(--space-3);
     min-height: 80vh;
+    min-height: 80dvh;
   }
 }
