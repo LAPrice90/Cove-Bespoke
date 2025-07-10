@@ -19,13 +19,13 @@
 
 /* Flex container */
 .header-inner {
-  max-width: 1200px;
-  margin-inline: auto;
+  width: 100%;
+  padding-inline: clamp(1rem, 5vw, 4rem); /* dynamic buffer */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: 1rem; /* responsive gutter */
 }
+
 
 /* -------- Logo -------- */
 .header-logo {

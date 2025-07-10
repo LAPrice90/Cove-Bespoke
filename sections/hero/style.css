@@ -26,8 +26,8 @@
   inset: 0;
   /* slightly stronger gradient for readability */
   background: linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.45)
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.05)
   );
 }
 

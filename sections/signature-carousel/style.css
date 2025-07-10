@@ -26,9 +26,22 @@
   display: none;
 }
 .signature-carousel .carousel-slide {
-  flex: 0 0 100%;
-  scroll-snap-align: center;
+  flex: 0 0 85%; /* Shows most of 1 slide + peek of next on mobile */
+  scroll-snap-align: start;
 }
+
+@media (min-width: 48rem) {
+  .signature-carousel .carousel-slide {
+    flex: 0 0 45%; /* Shows 2 slides + peek of 3rd on tablet */
+  }
+}
+
+@media (min-width: 64rem) {
+  .signature-carousel .carousel-slide {
+    flex: 0 0 30%; /* Shows 3 slides with spacing on desktop */
+  }
+}
+
 .signature-carousel .carousel-slide img {
   width: 100%;
   height: auto;
@@ -56,8 +69,29 @@
   justify-content: center;
   gap: var(--space-4);
 }
+
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: var(--space-400);
+}
+
 @media (min-width: 48rem) {
-  .signature-carousel .carousel-slide {
-    flex: 0 0 calc(50% - var(--space-6));
+  .carousel-dots {
+    display: none; /* Hide dots on tablet and desktop */
   }
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: var(--c-muted);
+  border-radius: 50%;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+.dot.active {
+  background: var(--c-accent);
 }
