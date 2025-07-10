@@ -180,16 +180,6 @@
       const dots = Array.from(document.querySelectorAll('.carousel-dots .dot'));
       const gap = parseFloat(getComputedStyle(track).gap) || 0;
 
-      function setPadding() {
-        const slide = slides[0];
-        const offset = (track.clientWidth - slide.clientWidth) / 2;
-        track.style.paddingLeft = offset + 'px';
-        track.style.paddingRight = offset + 'px';
-      }
-      setPadding();
-      window.addEventListener('resize', setPadding);
-      window.addEventListener('scroll', setPadding, { passive: true });
-
       const slideWidth = () => slides[0].clientWidth + gap;
       function scrollByAmount(amount) {
         const max = track.scrollWidth - track.clientWidth;
