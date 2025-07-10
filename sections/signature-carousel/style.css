@@ -1,5 +1,6 @@
 .signature-carousel {
   --slide-width: 85%;
+  --slide-gap: var(--space-6);
   background-color: var(--c-bg);
   padding-block: var(--space-7);
 }
@@ -24,7 +25,7 @@
 }
 .signature-carousel .carousel-track {
   display: flex;
-  gap: var(--space-6);
+  gap: var(--slide-gap);
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
@@ -33,12 +34,6 @@
   scrollbar-width: none; /* Firefox */
   padding-inline: calc((100% - var(--slide-width)) / 2);
   scroll-padding-inline: calc((100% - var(--slide-width)) / 2);
-}
-
-@media (min-width: 64rem) {
-  .signature-carousel {
-    --slide-width: 33.333%;
-  }
 }
 .signature-carousel .carousel-track::-webkit-scrollbar {
   display: none;
@@ -52,13 +47,13 @@
 
 @media (min-width: 48rem) {
   .signature-carousel {
-    --slide-width: 50%;
+    --slide-width: calc(50% - var(--slide-gap) / 2);
   }
 }
 
 @media (min-width: 64rem) {
   .signature-carousel {
-    --slide-width: 33.333%;
+    --slide-width: calc((100% / 3) - var(--slide-gap) * 2 / 3);
   }
 }
 
