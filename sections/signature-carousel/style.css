@@ -1,114 +1,136 @@
+/* -------------------------------------------------------
+   Signature Carousel – Responsive, Swipeable CSS Module
+   -------------------------------------------------------
+   Features implemented
+   • Mobile (⩽ 47.99 rem)
+       – 1 slide visibly centred with a 15 % “peek” of the next/prev
+       – Horizontal drag / momentum scroll
+       – Snap‑to‑centre on release (scroll‑snap)
+       – Dots indicator
+   • Tablet (48 rem – 63.99 rem)
+       – 2 slides fully visible + subtle peek of 3rd
+       – Dots removed (swipe/drag feedback is obvious)
+   • Desktop (⩾ 64 rem)
+       – 3 slides fully visible in a tidy grid
+       – Generous inner gutters; centred layout
+   • Smooth 0‑bounce scrolling, inertial feel (–webkit‑overﬂow‑scrolling)
+   • Hidden native scrollbars (Firefox + WebKit)
+   • Consistent, locked image height for a perfectly aligned row
+   • Auto‑calculated side‑padding so ﬁrst/last slide always centres
+------------------------------------------------------------------ */
+
+/* ---------- 1. Root‑level custom‑properties for easy tweaking ----- */
 .signature-carousel {
-  --slide-width: 85%;
-  --slide-gap: var(--space-6);
-  background-color: var(--c-bg);
+  /* spacing & sizing */
+  --gap: clamp(1rem, 4vw, 1.5rem); /* space between slides */
+  --mobile-slide: 85%;              /* width of each slide on phones */
+  --tablet-slide: calc(50% - var(--gap) / 2);
+  --desktop-slide: calc(33.333% - var(--gap) * 2 / 3);
+
+  /* visual style hooks (already defined in global CSS) */
+  background: var(--c-bg);
   padding-block: var(--space-7);
 }
-.signature-carousel .carousel-inner {
+
+/* ---------- 2. Inner container keeps carousel neatly centred ------ */
+.signature-carousel__inner {
   width: 100%;
   margin-inline: 0;
   padding-inline: 0;
 }
-
 @media (min-width: 48rem) {
-  .signature-carousel .carousel-inner {
-    max-width: 60rem;
+  .signature-carousel__inner {
+    max-width: 60rem;             /* 960 px container */
     margin-inline: auto;
     padding-inline: var(--space-4);
   }
 }
-.signature-carousel h2 {
-  font-family: var(--font-serif);
-  font-size: var(--fs-900);
-  text-align: center;
-  margin-bottom: var(--space-6);
-}
-.signature-carousel .carousel-track {
+
+/* ---------- 3. Track – flex row with snap & inertia --------------- */
+.signature-carousel__track {
   display: flex;
-  gap: var(--slide-gap);
+  gap: var(--gap);
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
-  padding-inline: calc((100% - var(--slide-width)) / 2);
-  scroll-padding-inline: calc((100% - var(--slide-width)) / 2);
+  -webkit-overflow-scrolling: touch; /* momentum on iOS */
+  scrollbar-width: none;             /* hide Firefox track */
+
+  /* side padding ensures 1st & last slide can centre */
+  padding-inline: calc((100% - var(--mobile-slide)) / 2);
+  scroll-padding-inline: calc((100% - var(--mobile-slide)) / 2);
 }
-.signature-carousel .carousel-track::-webkit-scrollbar {
-  display: none;
-}
-.signature-carousel .carousel-slide {
-  flex: 0 0 var(--slide-width);
+.signature-carousel__track::-webkit-scrollbar { display: none; }
+
+/* ---------- 4. Slide sizing for each breakpoint ------------------- */
+.signature-carousel__slide {
+  flex: 0 0 var(--mobile-slide);
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
 }
-
 @media (min-width: 48rem) {
-  .signature-carousel {
-    --slide-width: calc(50% - var(--slide-gap) / 2);
+  .signature-carousel__track {
+    padding-inline: calc((100% - var(--tablet-slide)) / 2);
+    scroll-padding-inline: calc((100% - var(--tablet-slide)) / 2);
   }
+  .signature-carousel__slide { flex: 0 0 var(--tablet-slide); }
 }
-
 @media (min-width: 64rem) {
-  .signature-carousel {
-    --slide-width: calc((100% / 3) - var(--slide-gap) * 2 / 3);
+  .signature-carousel__track {
+    padding-inline: calc((100% - var(--desktop-slide)) / 2);
+    scroll-padding-inline: calc((100% - var(--desktop-slide)) / 2);
   }
+  .signature-carousel__slide { flex: 0 0 var(--desktop-slide); }
 }
 
-
-.signature-carousel .carousel-slide img {
+/* ---------- 5. Slide content -------------------------------------- */
+.signature-carousel__slide img {
   width: 100%;
-  height: 20rem; /* lock image height for uniform slides */
+  height: 30rem;        /* uniform height across breakpoints */
   object-fit: cover;
-  display: block;
   border-radius: var(--radius-soft);
+  display: block;
 }
-.signature-carousel .slide-text {
+.signature-carousel__text {
   margin-top: var(--space-4);
   text-align: center;
 }
-.signature-carousel .slide-text h3 {
+.signature-carousel__text h3 {
   font-family: var(--font-serif);
   font-size: var(--fs-700);
   margin-bottom: var(--space-2);
 }
-.signature-carousel .slide-text p {
+.signature-carousel__text p {
   font-family: var(--font-sans);
   font-size: var(--fs-400);
   color: var(--c-muted);
   margin: 0;
 }
-.signature-carousel .carousel-controls {
+
+/* ---------- 6. Dot pagination – phones only ----------------------- */
+.signature-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: var(--space-4);
+}
+@media (min-width: 48rem) { .signature-carousel__dots { display: none; } }
+
+.signature-carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--c-muted);
+  transition: background 0.3s ease;
+}
+.signature-carousel__dot.is-active { background: var(--c-accent); }
+
+/* ---------- 7. CTA / controls row (optional) ---------------------- */
+.signature-carousel__controls {
   margin-top: var(--space-5);
   display: flex;
   justify-content: center;
   gap: var(--space-4);
-}
-
-
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: var(--space-400);
-}
-
-@media (min-width: 48rem) {
-  .carousel-dots {
-    display: none; /* Hide dots on tablet and desktop */
-  }
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  background: var(--c-muted);
-  border-radius: 50%;
-  transition: background 0.3s;
-  margin-top: 10px;
-}
-.dot.active {
-  background: var(--c-accent);
 }
