@@ -29,6 +29,15 @@
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
+  padding-inline-start: 5%; /* subtle gutter on mobile/tablet */
+  scroll-padding-left: 5%;
+}
+
+@media (min-width: 64rem) {
+  .signature-carousel .carousel-track {
+    padding-inline-start: 0;
+    scroll-padding-left: 0;
+  }
 }
 .signature-carousel .carousel-track::-webkit-scrollbar {
   display: none;
