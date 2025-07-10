@@ -4,6 +4,7 @@
   /* take up the full viewport height so no vertical scrolling is needed */
   min-height: 100vh;
   min-height: 100svh;
+  min-height: 100dvh; /* dynamic height to avoid shrinking on scroll */
   display: flex;
   align-items: center;
 }
