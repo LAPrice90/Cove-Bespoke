@@ -101,6 +101,8 @@
   font-family: var(--font-serif);
   font-size: var(--fs-700);
   margin-bottom: var(--space-2);
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 .signature-carousel__text p {
   font-family: var(--font-sans);
