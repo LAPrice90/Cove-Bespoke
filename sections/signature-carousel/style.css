@@ -29,14 +29,11 @@
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
-  padding-inline-start: 5%; /* subtle gutter on mobile/tablet */
-  scroll-padding-left: 5%;
 }
 
 @media (min-width: 64rem) {
   .signature-carousel .carousel-track {
     padding-inline-start: 0;
-    scroll-padding-left: 0;
   }
 }
 .signature-carousel .carousel-track::-webkit-scrollbar {
@@ -44,7 +41,7 @@
 }
 .signature-carousel .carousel-slide {
   flex: 0 0 85%; /* Shows most of 1 slide + peek of next on mobile */
-  scroll-snap-align: start;
+  scroll-snap-align: center;
 }
 
 @media (min-width: 48rem) {
