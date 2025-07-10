@@ -1,12 +1,6 @@
 .signature-carousel {
   background-color: var(--c-bg);
   padding-block: var(--space-7);
-  /* take up the full viewport height so no vertical scrolling is needed */
-  min-height: 100vh;
-  min-height: 100svh;
-  min-height: 100dvh; /* dynamic height to avoid shrinking on scroll */
-  display: flex;
-  align-items: center;
 }
 .signature-carousel .carousel-inner {
   width: 100%;
@@ -47,7 +41,7 @@
   display: none;
 }
 .signature-carousel .carousel-slide {
-  flex: 0 0 85%; /* Shows most of 1 slide + peek of next on mobile */
+  flex: 0 0 85%;
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
@@ -55,15 +49,16 @@
 
 @media (min-width: 48rem) {
   .signature-carousel .carousel-slide {
-    flex: 0 0 45%; /* Shows 2 slides + peek of 3rd on tablet */
+    flex: 0 0 50%;
   }
 }
 
 @media (min-width: 64rem) {
   .signature-carousel .carousel-slide {
-    flex: 0 0 30%; /* Shows 3 slides with spacing on desktop */
+    flex: 0 0 33.333%;
   }
 }
+
 
 .signature-carousel .carousel-slide img {
   width: 100%;
