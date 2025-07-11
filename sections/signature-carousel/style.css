@@ -24,7 +24,7 @@
   /* spacing & sizing */
   --gap: clamp(1rem, 4vw, 1.5rem); /* space between slides */
   --mobile-slide: 90%;              /* width of each slide on phones */
-  --tablet-slide: calc(45% - var(--gap) / 2); /* show peek of next slide */
+  --tablet-slide: calc(50% - var(--gap) / 2); /* show peek of next slide */
   --desktop-slide: calc(25% - var(--gap) * 3 / 4);
 
   /* visual style hooks (already defined in global CSS) */
