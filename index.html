@@ -175,7 +175,7 @@
     loadPartial('footer/footer.html', 'footer-placeholder');
 
     const track = document.querySelector('[data-js="signature-track"]');
-    if (track) {
+    if (track && track.scrollWidth > track.clientWidth) {
       const slides = Array.from(track.querySelectorAll('.signature-carousel__slide'));
       const dots = Array.from(document.querySelectorAll('.signature-carousel__dot'));
       const gap = parseFloat(getComputedStyle(track).gap) || 0;
