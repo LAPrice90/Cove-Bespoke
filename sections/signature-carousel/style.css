@@ -23,7 +23,7 @@
 .signature-carousel {
   /* spacing & sizing */
   --gap: clamp(1rem, 4vw, 1.5rem); /* space between slides */
-  --mobile-slide: 85%;              /* width of each slide on phones */
+  --mobile-slide: 90%;              /* width of each slide on phones */
   --tablet-slide: calc(50% - var(--gap) / 2);
   --desktop-slide: calc(33.333% - var(--gap) * 2 / 3);
 
