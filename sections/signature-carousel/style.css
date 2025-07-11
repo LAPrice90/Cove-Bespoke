@@ -43,7 +43,6 @@
 }
 @media (min-width: 48rem) {
   .signature-carousel__inner {
-    max-width: 60rem;             /* 960 px container */
     margin-inline: auto;
     padding-inline: var(--space-4);
   }
