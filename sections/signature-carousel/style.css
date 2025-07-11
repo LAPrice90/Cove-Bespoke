@@ -11,8 +11,8 @@
        – 2 slides fully visible + subtle peek of 3rd
        – Dots removed (swipe/drag feedback is obvious)
    • Desktop (⩾ 64 rem)
-       – 3 slides fully visible in a tidy grid
-       – Generous inner gutters; centred layout
+       – 4 slides displayed side‑by‑side
+       – Scrolling disabled
    • Smooth 0‑bounce scrolling, inertial feel (–webkit‑overﬂow‑scrolling)
    • Hidden native scrollbars (Firefox + WebKit)
    • Consistent, locked image height for a perfectly aligned row
@@ -25,7 +25,7 @@
   --gap: clamp(1rem, 4vw, 1.5rem); /* space between slides */
   --mobile-slide: 90%;              /* width of each slide on phones */
   --tablet-slide: calc(50% - var(--gap) / 2);
-  --desktop-slide: calc(33.333% - var(--gap) * 2 / 3);
+  --desktop-slide: calc(25% - var(--gap) * 3 / 4);
 
   /* visual style hooks (already defined in global CSS) */
   background: var(--c-bg);
@@ -79,8 +79,11 @@
 }
 @media (min-width: 64rem) {
   .signature-carousel__track {
-    padding-inline: calc((100% - var(--desktop-slide)) / 2);
-    scroll-padding-inline: calc((100% - var(--desktop-slide)) / 2);
+    overflow-x: hidden;
+    scroll-snap-type: none;
+    -webkit-overflow-scrolling: auto;
+    padding-inline: 0;
+    scroll-padding-inline: 0;
   }
   .signature-carousel__slide { flex: 0 0 var(--desktop-slide); }
 }
