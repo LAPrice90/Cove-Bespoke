@@ -28,7 +28,7 @@
   font-family: var(--font-heading);
   font-size: clamp(48px, 12vw, 120px);
   margin: 0 0 20px;
-  color: var(--color-blue);
+  color: var(--c-accent);
 }
 
 .error-message {
