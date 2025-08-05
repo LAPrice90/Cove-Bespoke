@@ -1,0 +1,55 @@
+<!-- ==========================================================
+     Cove Bespoke – Footer Component (desktop & mobile)
+     ----------------------------------------------------------
+     * Depends on colour & typography vars from base.css
+     * Uses .btn--primary from buttons.css if newsletter CTA added
+     * Scoped CSS below; move to /footer/style.css if you prefer
+     * Author: ChatGPT (o3) – v1.0 2025‑07‑03
+     ========================================================== -->
+
+<footer class="site-footer" aria-labelledby="footer-heading">
+  <div class="footer-inner">
+
+    <!-- Top row: Logo + short statement (optional) -->
+    <div class="footer-brand">
+      <img src="images/logo.svg" alt="Cove Bespoke logo" class="footer-logo" />
+      <p class="footer-tagline">Bespoke kitchens &amp; interiors, crafted for life.</p>
+    </div>
+
+    <!-- Middle row: Navigation links -->
+    <nav class="footer-nav" aria-label="Footer">
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Bottom row: Contact & legal -->
+    <div class="footer-meta">
+      <address>
+        <a href="mailto:hello@covebespoke.ie">hello@covebespoke.ie</a><br />
+        +353 (0)12 345 678 • Dublin, Ireland
+      </address>
+
+      <p class="footer-legal">
+        © <span id="year">2025</span> Cove Bespoke. All rights reserved.
+        <span class="pipe">|</span>
+        <a href="privacy-policy.html">Privacy&nbsp;Policy</a>
+        <span class="pipe">|</span>
+        <a href="terms.html">Terms&nbsp;of&nbsp;Service</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<link rel="stylesheet" href="footer/style.css" />
+
+<!-- Year auto-update (optional) -->
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+

@@ -1,0 +1,33 @@
+/* -----------------------------------------------
+   Basic contact form layout
+----------------------------------------------- */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.contact-form form {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  gap: 0.25rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid var(--c-muted);
+  border-radius: var(--radius-soft);
+  font-family: var(--font-sans);
+  font-size: var(--fs-400);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
