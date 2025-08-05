@@ -25,8 +25,10 @@
 }
 
 .error-wrapper h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(48px, 12vw, 120px);
+  font-family: var(--font-serif);
+  font-size: var(--fs-1000);
+  font-weight: 400;
+  line-height: var(--lh-heading);
   margin: 0 0 20px;
   color: var(--color-blue);
 }
