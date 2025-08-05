@@ -13,10 +13,6 @@
   <link rel="stylesheet" href="style/forms.css">
   <link rel="stylesheet" href="style/animations.css">
   <link rel="stylesheet" href="sections/hero/style.css">
-  <link rel="stylesheet" href="sections/statement/style.css">
-  <link rel="stylesheet" href="sections/signature-carousel/style.css">
-  <link rel="stylesheet" href="sections/feature-grid/style.css">
-  <link rel="stylesheet" href="sections/testimonials/style.css">
 </head>
 <body>
   <div id="header-placeholder"></div>
@@ -26,113 +22,6 @@
       <h1>Bespoke Kitchens & Interiors, Crafted for Life.</h1>
       <p>Discover a seamless journey to a space that is uniquely yours.</p>
       <a href="/contact.html" class="btn btn--primary">Begin Your Journey</a>
-    </div>
-  </section>
-  <section class="crafted-statement" id="crafted-for-life">
-    <div class="statement-inner container">
-      <h2>Crafted&nbsp;for&nbsp;Life</h2>
-      <p>Every Cove Bespoke kitchen and interior is made to stand the test of time, blending timeless design with meticulous craftsmanship.</p>
-      <a href="/portfolio.html" class="btn btn--primary">Explore&nbsp;Our&nbsp;Projects</a>
-    </div>
-  </section>
-  <section class="signature-carousel" id="signature-collection">
-    <div class="signature-carousel__inner">
-      <h2>Signature Collection</h2>
-      <div class="signature-carousel__track" data-js="signature-track">
-        <article class="signature-carousel__slide">
-          <img src="images/index-hero.png" alt="Modern Coastal Retreat" />
-          <div class="signature-carousel__text">
-            <h3>Modern Coastal Retreat</h3>
-            <p>Sleek lines and serene sea hues.</p>
-          </div>
-        </article>
-        <article class="signature-carousel__slide">
-          <img src="images/index-hero.png" alt="Refined Urban Classic" />
-          <div class="signature-carousel__text">
-            <h3>Refined Urban Classic</h3>
-            <p>Tailored cabinetry with timeless appeal.</p>
-          </div>
-        </article>
-        <article class="signature-carousel__slide">
-          <img src="images/index-hero.png" alt="Light-Filled Family Hub" />
-          <div class="signature-carousel__text">
-            <h3>Light-Filled Family Hub</h3>
-            <p>An inviting space for everyday living.</p>
-          </div>
-        </article>
-        <article class="signature-carousel__slide">
-          <img src="images/index-hero.png" alt="Tailored Heritage Revival" />
-          <div class="signature-carousel__text">
-            <h3>Tailored Heritage Revival</h3>
-            <p>Classic forms with modern functionality.</p>
-          </div>
-        </article>
-      </div>
-      <div class="signature-carousel__dots">
-        <span class="signature-carousel__dot is-active"></span>
-        <span class="signature-carousel__dot"></span>
-        <span class="signature-carousel__dot"></span>
-        <span class="signature-carousel__dot"></span>
-      </div>
-      <div class="signature-carousel__controls">
-        <a href="/portfolio.html" class="btn btn--primary">View Portfolio</a>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="feature-grid" id="why-bespoke">
-    <div class="feature-grid-inner">
-      <h2>Why Bespoke With Us</h2>
-      <div class="feature-cards">
-        <article class="feature-card">
-          <h3>Craftsmanship</h3>
-          <p>Our skilled artisans build each element with meticulous attention to detail, ensuring durability and beauty that endure.</p>
-        </article>
-        <article class="feature-card">
-          <h3>Timeless Design</h3>
-          <p>We balance classic forms with understated luxury, creating spaces that remain relevant for years to come.</p>
-        </article>
-        <article class="feature-card">
-          <h3>Personalised Process</h3>
-          <p>From concept to completion, we work closely with you to craft solutions perfectly suited to your lifestyle.</p>
-        </article>
-        <article class="feature-card">
-          <h3>Aftercare</h3>
-          <p>Our commitment continues beyond installation with ongoing support to keep your space looking its best.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-  <section class="testimonials-strip" id="testimonials">
-    <div class="testimonials-inner">
-      <h2>What Clients Say</h2>
-      <div class="testimonials-grid">
-        <figure class="testimonial" data-fade>
-          <blockquote>
-            <p>“Cove Bespoke transformed our period townhouse – every detail exudes craftsmanship.”</p>
-          </blockquote>
-          <figcaption>James &amp; Olivia, Harrogate</figcaption>
-        </figure>
-        <figure class="testimonial" data-fade>
-          <blockquote>
-            <p>“The ultimate luxury kitchen – both functional and sublime.”</p>
-          </blockquote>
-          <figcaption><em>Interiors Monthly</em></figcaption>
-        </figure>
-        <figure class="testimonial" data-fade>
-          <blockquote>
-            <p>“Their personalised service made the renovation effortless.”</p>
-          </blockquote>
-          <figcaption>Sophia L., Chelsea</figcaption>
-        </figure>
-        <figure class="testimonial" data-fade>
-          <blockquote>
-            <p>“A benchmark for quiet elegance and timeless design.”</p>
-          </blockquote>
-          <figcaption><em>Architectural Digest</em></figcaption>
-        </figure>
-      </div>
     </div>
   </section>
   <div id="footer-placeholder"></div>
@@ -173,58 +62,6 @@
     }
     loadPartial('header/header.html', 'header-placeholder');
     loadPartial('footer/footer.html', 'footer-placeholder');
-
-    const track = document.querySelector('[data-js="signature-track"]');
-    if (track && track.scrollWidth > track.clientWidth) {
-      const slides = Array.from(track.querySelectorAll('.signature-carousel__slide'));
-      const dots = Array.from(document.querySelectorAll('.signature-carousel__dot'));
-      const gap = parseFloat(getComputedStyle(track).gap) || 0;
-
-      const slideWidth = () => slides[0].clientWidth + gap;
-      function scrollByAmount(amount) {
-        const max = track.scrollWidth - track.clientWidth;
-        const dest = Math.min(Math.max(track.scrollLeft + amount, 0), max);
-        track.scrollTo({ left: dest, behavior: 'smooth' });
-      }
-      function updateDots() {
-        const center = track.scrollLeft + track.clientWidth / 2;
-        let closest = 0;
-        let minDist = Infinity;
-        slides.forEach((s, idx) => {
-          const sCenter = s.offsetLeft + s.clientWidth / 2;
-          const dist = Math.abs(center - sCenter);
-          if (dist < minDist) {
-            minDist = dist;
-            closest = idx;
-          }
-        });
-        dots.forEach((d, i) => d.classList.toggle('is-active', i === closest));
-      }
-      track.addEventListener('scroll', updateDots);
-      window.addEventListener('resize', updateDots);
-      updateDots();
-
-      let startX = 0;
-      track.addEventListener('touchstart', e => {
-        startX = e.touches[0].clientX;
-      }, { passive: true });
-      track.addEventListener('touchend', e => {
-        const delta = startX - e.changedTouches[0].clientX;
-        if (delta > 50) scrollByAmount(slideWidth());
-        if (delta < -50) scrollByAmount(-slideWidth());
-      }, { passive: true });
-    }
-    document.querySelectorAll("[data-fade]").forEach(el => {
-      const ob = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add("is-visible");
-            ob.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      ob.observe(el);
-    });
   </script>
 </body>
 </html>
