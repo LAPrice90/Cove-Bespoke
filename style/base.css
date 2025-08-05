@@ -96,7 +96,7 @@ h1,h2,h3,h4,h5,h6{
   margin:0 0 var(--space-4) 0;
   color:var(--c-text);
 }
-h1{font-size:var(--fs-1000);letter-spacing:-0.02em;}
+h1{color:var(--c-accent);font-size:var(--fs-1000);letter-spacing:-0.02em;}
 h2{font-size:var(--fs-900);}
 h3{font-size:var(--fs-800);}
 h4{font-size:var(--fs-700);}
