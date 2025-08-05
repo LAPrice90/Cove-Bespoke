@@ -1,0 +1,105 @@
+<!-- ==========================================================
+     Cove Bespoke – Header Component (desktop & mobile)
+     ----------------------------------------------------------
+     * Depends on global base.css + buttons.css (already in build)
+     * Uses colour & spacing CSS vars declared in base.css
+     * Includes scoped <style> for header‑specific rules so the
+       user gets both HTML *and* CSS in a single file (can be
+       split into header/style.css later if desired).
+============================================================-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Global stylesheets already linked in parent pages -->
+    <!-- <link rel="stylesheet" href="style/base.css"> -->
+    <!-- <link rel="stylesheet" href="style/buttons.css"> -->
+
+    <link rel="stylesheet" href="header/style.css" />
+  </head>
+  <body>
+    <header class="site-header" data-js="site-header">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a href="index.html" class="header-logo">
+          <img src="./images/cove-bespoke-logo.png" alt="Cove Bespoke Logo" height="60">
+        </a>
+
+        <!-- Primary navigation (desktop) -->
+        <nav class="primary-nav" aria-label="Primary Navigation">
+          <a href="index.html">Home</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="services.html">Services</a>
+          <a href="journal.html">Journal</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <!-- Hamburger (mobile) -->
+        <button class="hamburger" aria-label="Toggle menu" data-js="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile nav drawer -->
+    <nav id="mobile-drawer" class="mobile-nav" aria-label="Mobile Navigation" data-js="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="journal.html">Journal</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Optional JS for toggle behaviour -->
+    <script>
+      (function () {
+        const header = document.querySelector('[data-js="site-header"]');
+        const burger = document.querySelector('[data-js="hamburger"]');
+        const mobileNav = document.querySelector('[data-js="mobile-nav"]');
+        let lastScroll = 0;
+
+        // Toggle drawer
+        burger.addEventListener('click', () => {
+          burger.classList.toggle('is-active');
+          mobileNav.classList.toggle('is-open');
+          document.body.classList.toggle('no-scroll');
+        });
+
+        // Close drawer on swipe right
+        let startX = 0;
+        mobileNav.addEventListener(
+          'touchstart',
+          e => {
+            startX = e.touches[0].clientX;
+          },
+          { passive: true }
+        );
+        mobileNav.addEventListener(
+          'touchend',
+          e => {
+            const endX = e.changedTouches[0].clientX;
+            if (endX - startX > 50) {
+              burger.classList.remove('is-active');
+              mobileNav.classList.remove('is-open');
+              document.body.classList.remove('no-scroll');
+            }
+          },
+          { passive: true }
+        );
+
+        // Scroll elevation effect
+        window.addEventListener('scroll', () => {
+          const curr = window.scrollY;
+          header.classList.toggle('is-elevated', curr > 10);
+          lastScroll = curr;
+        });
+      })();
+    </script>
+  </body>
+</html>

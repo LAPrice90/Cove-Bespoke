@@ -1,0 +1,126 @@
+/* ===========================================================
+   Cove Bespoke – Base Stylesheet (colours & typography only)
+   -----------------------------------------------------------
+   ▸ Two‑font system: DM Serif Display (headings) & Inter (body)
+   ▸ Neutral ivory / charcoal palette with deep‑green accent
+   ▸ Fluid clamp‑based type‑scale & 8pt spacing grid
+   ▸ No layout, components or animation helpers – those live in dedicated files
+   =========================================================== */
+
+/* Google Font imports */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+/* -----------------------------------------------------------
+   Root variables
+   -------------------------------------------------------- */
+:root {
+  /* Palette */
+  --c-bg:             #FAF9F7;  /* ivory background */
+  --c-surface:        #FFFFFF;  /* pure‑white surfaces */
+  --c-text:           #1C1C1A;  /* near‑black charcoal */
+  --c-muted:          #67675F;  /* muted grey */
+  --c-accent:         #2F4F4F;  /* deep, desaturated green */
+  --c-accent-light:   #425F5F;  /* lighter accent for hovers */
+
+  /* Fonts */
+  --font-serif: 'DM Serif Display', serif;
+  --font-sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+
+  /* Fluid type‑scale (mobile‑first → desktop) */
+  --fs-400:  clamp(1rem, 0.95rem + 0.25vw, 1.125rem); /* body */
+  --fs-500:  clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);
+  --fs-600:  clamp(1.25rem, 1.15rem + 0.45vw, 1.5rem);
+  --fs-700:  clamp(1.5rem, 1.35rem + 0.6vw, 1.875rem);
+  --fs-800:  clamp(2rem, 1.8rem + 0.8vw, 2.5rem);
+  --fs-900:  clamp(2.5rem, 2.2rem + 1vw, 3.25rem);
+  --fs-1000: clamp(3rem, 2.6rem + 1.2vw, 4rem); /* hero */
+
+  /* Line‑height */
+  --lh-body:    1.6;
+  --lh-heading: 1.2;
+
+  /* 8‑pt spacing scale (multiples of 4px) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  /* Aliases for component spacing scale */
+  --space-200: var(--space-2);
+  --space-300: var(--space-3);
+  --space-500: var(--space-5);
+
+  /* Radius */
+  --radius-soft: 0.5rem;
+  --radius-md: 0.5rem;
+
+  color-scheme: light;
+}
+
+/* -----------------------------------------------------------
+   Global resets
+   -------------------------------------------------------- */
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font-sans);
+  font-size:var(--fs-400);
+  line-height:var(--lh-body);
+  background-color:var(--c-bg);
+  color:var(--c-text);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/* Ensure images never exceed their container */
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+/* -----------------------------------------------------------
+   Typography hierarchy
+   -------------------------------------------------------- */
+h1,h2,h3,h4,h5,h6{
+  font-family:var(--font-serif);
+  font-weight:400;
+  line-height:var(--lh-heading);
+  margin:0 0 var(--space-4) 0;
+  color:var(--c-text);
+}
+h1{font-size:var(--fs-1000);letter-spacing:-0.02em;}
+h2{font-size:var(--fs-900);}
+h3{font-size:var(--fs-800);}
+h4{font-size:var(--fs-700);}
+h5{font-size:var(--fs-600);}
+h6{font-size:var(--fs-500);font-family:var(--font-sans);text-transform:uppercase;letter-spacing:0.05em;}
+
+p{margin:0 0 var(--space-5) 0;}
+
+/* Links */
+a{
+  color:var(--c-accent);
+  text-decoration:none;
+  transition:color 0.25s ease;
+}
+a:hover,a:focus{
+  color:var(--c-accent-light);
+  text-decoration:underline;}
+
+/* Inline text helpers */
+strong,b{font-weight:600;}
+small{font-size:0.875em;}
+.text-center{text-align:center;}
+.text-muted{color:var(--c-muted);}
+
+/* Reduced‑motion helpers */
+@media (prefers-reduced-motion: reduce) {
+  *{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}
+}
+/* Ready */

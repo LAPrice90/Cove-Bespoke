@@ -1,0 +1,85 @@
+/* ==========================================================
+   Cove Bespoke – Buttons Stylesheet
+   ----------------------------------------------------------
+   Uses:
+   - DM Serif Display for headings
+   - Inter for buttons/text
+   - Colour and spacing variables from base.css
+   ---------------------------------------------------------- */
+
+/* Base Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-200);
+  font-family: var(--font-sans);
+  font-size: var(--fs-400);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+/* Primary Button */
+.btn--primary {
+  background: var(--c-accent);
+  color: var(--c-surface);
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+  background: var(--c-accent-light);
+  transform: translateY(-2px);
+}
+
+/* Secondary Button */
+.btn--secondary {
+  background: transparent;
+  color: var(--c-text);
+  border: 1px solid var(--c-text);
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus {
+  background: var(--c-text);
+  color: var(--c-surface);
+}
+
+/* Ghost Button */
+.btn--ghost {
+  background: transparent;
+  color: var(--c-text);
+}
+
+.btn--ghost:hover,
+.btn--ghost:focus {
+  color: var(--c-accent);
+}
+
+/* Disabled State */
+.btn[disabled],
+.btn.is-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Optional icon spacing utility */
+.btn--icon-left > svg,
+.btn--icon-right > svg {
+  width: 1em;
+  height: 1em;
+}
+
+.btn--icon-left > svg {
+  margin-right: var(--space-200);
+}
+
+.btn--icon-right > svg {
+  margin-left: var(--space-200);
+}
