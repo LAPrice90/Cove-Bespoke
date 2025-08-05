@@ -8,7 +8,7 @@
 
 /* Heading (mobile) */
 .media-left__heading {
-  font-family: var(--font-heading);
+  font-family: var(--font-serif);
   font-weight: 400;
   color: var(--color-blue);
   text-transform: uppercase;
