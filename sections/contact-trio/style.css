@@ -1,0 +1,48 @@
+/* ========== CONTACT-TRIO (responsive like project cards) ========== */
+
+/* container */
+.contact-trio {
+  display: grid;
+  grid-template-columns: 1fr;     /* mobile ≤ 767 px – one per row */
+  gap: 20px;
+  max-width: 1600px;              /* stay inside 1600 px on desktop */
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* tablet: two per row */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contact-trio { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* desktop: three per row */
+@media (min-width: 1024px) {
+  .contact-trio { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* card */
+.contact-trio .person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-md) var(--space-sm);
+  background: var(--color-blue);
+  color: var(--color-white);
+}
+
+/* navy behind lower 80 % of head-shot */
+
+.contact-trio .avatar-wrap {
+  display: none;
+}
+
+/* image with drop-shadow following transparency */
+
+.contact-trio .avatar {
+  display: none;
+}
+
+/* text */
+.contact-trio h3 { color: var(--color-white); margin-bottom: var(--space-xs); }
+.contact-trio p  { margin: 0 0 var(--space-xs); font-size: 14px; line-height: 1.4; color: var(--color-white); }
+
