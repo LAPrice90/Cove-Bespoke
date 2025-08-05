@@ -1,1 +1,14 @@
+/*------------------------------------------------------------
+  Global colour variables
+  --------------------------------------------------------- */
+:root {
+  /* Section accent and text colours */
+  --color-blue: var(--c-accent); /* deep green accent */
+  --color-text: var(--c-text);
+
+  /* Utility colours */
+  --color-white: var(--c-surface);
+  --color-black: var(--c-text);
+}
+
 /* Ready */
