@@ -11,7 +11,7 @@
   z-index: 1400;
   background-color: var(--c-bg);
   padding-block: 0.75rem; /* 12px */
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, padding-block 0.3s ease;
 }
 .site-header.is-elevated {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
@@ -152,6 +152,9 @@ body.no-scroll {
     display: block;
   }
 
+  .site-header.is-elevated {
+    padding-block: 0.25rem;
+  }
   .site-header.is-elevated .header-logo img {
     height: 40px;
   }

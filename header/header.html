@@ -62,7 +62,7 @@
         const header = document.querySelector('[data-js="site-header"]');
         const burger = document.querySelector('[data-js="hamburger"]');
         const mobileNav = document.querySelector('[data-js="mobile-nav"]');
-        let lastScroll = 0;
+        let isElevated = false;
 
         // Toggle drawer
         burger.addEventListener('click', () => {
@@ -96,8 +96,13 @@
         // Scroll elevation effect
         window.addEventListener('scroll', () => {
           const curr = window.scrollY;
-          header.classList.toggle('is-elevated', curr > 10);
-          lastScroll = curr;
+          if (!isElevated && curr > 10) {
+            header.classList.add('is-elevated');
+            isElevated = true;
+          } else if (isElevated && curr <= 10) {
+            header.classList.remove('is-elevated');
+            isElevated = false;
+          }
         });
       })();
     </script>
