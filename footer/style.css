@@ -4,6 +4,7 @@
   padding-block: 4rem 3rem; /* 64px / 48px */
   font-size: var(--fs-400); /* body size */
   line-height: 1.6;
+  border-top: 1px solid rgba(28, 28, 26, 0.1);
 }
 
 .footer-inner {
