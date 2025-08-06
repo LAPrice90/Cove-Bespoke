@@ -11,7 +11,7 @@
   font-family: var(--font-heading);
   font-size: clamp(32px, 8vw, 48px);
   font-weight: 500;
-  color: var(--color-blue);
+  color: var(--c-accent);
   margin-bottom: 16px;
 }
 
