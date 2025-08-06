@@ -26,6 +26,12 @@
   transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
+.btn:hover,
+.btn:focus {
+  color: var(--c-surface);
+  text-decoration: none;
+}
+
 /* Primary Button */
 .btn--primary {
   background: var(--c-accent);
@@ -59,7 +65,7 @@
 
 .btn--ghost:hover,
 .btn--ghost:focus {
-  color: var(--c-accent);
+  color: var(--c-surface);
 }
 
 /* Disabled State */
