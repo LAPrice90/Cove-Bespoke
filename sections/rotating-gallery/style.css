@@ -181,3 +181,36 @@
   width: auto !important;      /* beat .swiper-slide { width:100% } */
   flex: 0 0 auto !important;
 }
+
+/* Fade out the left/right edges of the pills */
+.tabs-swiper {
+  position: relative;
+}
+
+.tabs-swiper::before,
+.tabs-swiper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50px; /* adjust width for effect */
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.tabs-swiper::before {
+  left: 0;
+  background: linear-gradient(to right, #FAF9F7, transparent);
+}
+
+.tabs-swiper::after {
+  right: 0;
+  background: linear-gradient(to left, #FAF9F7, transparent);
+}
+
+@media (min-width: 1024px) {
+  .process-tabs-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
