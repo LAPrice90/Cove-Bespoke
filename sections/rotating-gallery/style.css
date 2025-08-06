@@ -1,6 +1,6 @@
 /* ─── rotating-gallery (inherits Installation-Process layout) ───────────── */
 .rotating-gallery-process {
-  background: #fff;
+  background: var(--c-bg);
   text-align: center;
   position: relative;
 }
@@ -150,6 +150,8 @@
 .tabs-swiper {
   overflow: hidden;
   padding: 0 16px;
+  display: block;
+  width: 100%;
 }
 
 .tabs-swiper .swiper-wrapper {
