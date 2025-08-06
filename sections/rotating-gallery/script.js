@@ -73,14 +73,25 @@
 
   function buildPills(center) {
     trackEl.innerHTML = '';
-    const visible = 20;
-    const half    = Math.floor(visible / 2);
-    for (let off = -half; off <= half; off++) {
-      const i = (center + off + total) % total;
-      const clone = originals[i].cloneNode(true);
-      addTabClick(clone.querySelector('.tab'));
-      trackEl.appendChild(clone);
+    const visible = Math.min(total, 20);
+
+    if (visible === total) {
+      originals.forEach(slide => {
+        const clone = slide.cloneNode(true);
+        addTabClick(clone.querySelector('.tab'));
+        trackEl.appendChild(clone);
+      });
+    } else {
+      const half = Math.floor(visible / 2);
+      for (let off = -half; off <= half; off++) {
+        let i = (center + off) % total;
+        if (i < 0) i += total;
+        const clone = originals[i].cloneNode(true);
+        addTabClick(clone.querySelector('.tab'));
+        trackEl.appendChild(clone);
+      }
     }
+
     updateScale();
   }
 
