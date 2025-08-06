@@ -12,8 +12,11 @@
   <link rel="stylesheet" href="style/buttons.css">
   <link rel="stylesheet" href="style/forms.css">
   <link rel="stylesheet" href="style/animations.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="sections/hero/style.css">
   <link rel="stylesheet" href="sections/intro-banner/style.css">
+  <link rel="stylesheet" href="sections/rotating-gallery/style.css">
   <link rel="stylesheet" href="sections/media-left/style.css">
 </head>
 <body>
@@ -32,6 +35,56 @@
       <div class="intro-banner__text-block">
         <p>At Cove Bespoke, every kitchen and interior is made to order — designed around your space, lifestyle, and personal vision. From our workshop in County Wicklow, we create handmade pieces using time-honoured techniques, modern digital design tools, and a deep respect for quality. Every element is built from scratch, sprayed in-house, and finished to exacting standards.</p>
         <p>We work closely with homeowners, architects, and designers across Wicklow and surrounding areas, guiding each project from concept through to installation. Our process is collaborative, precise, and entirely tailored. The result is a space that feels uniquely yours — both beautifully functional and made to last.</p>
+      </div>
+    </div>
+  </section>
+  <section id="rotating-gallery" class="section rotating-gallery-process">
+    <h2 class="section-title">Bespoke Styles</h2>
+
+    <div class="process-tabs-wrapper">
+      <div class="swiper-button-prev"></div>
+      <div class="tabs-swiper swiper process-tabs">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><button class="tab active" data-slide="0">Bars</button></div>
+          <div class="swiper-slide"><button class="tab" data-slide="1">Kitchens</button></div>
+          <div class="swiper-slide"><button class="tab" data-slide="2">TV Units</button></div>
+          <div class="swiper-slide"><button class="tab" data-slide="3">Wardrobes</button></div>
+          <div class="swiper-slide"><button class="tab" data-slide="4">Wine Storage</button></div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <div class="process-copy">
+      <p class="process-text active" data-step="0">Handcrafted bars for sociable spaces.</p>
+      <p class="process-text" data-step="1">Bespoke kitchens tailored for cooking and gathering.</p>
+      <p class="process-text" data-step="2">Custom TV units seamlessly integrate technology and design.</p>
+      <p class="process-text" data-step="3">Fitted wardrobes maximising storage with style.</p>
+      <p class="process-text" data-step="4">Wine storage designed to showcase prized collections.</p>
+    </div>
+
+    <div class="swiper rotating-gallery-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="images/hero/bar.jpg" alt="Home bar cabinetry">
+          <h2 class="slide-title">Bars</h2>
+        </div>
+        <div class="swiper-slide">
+          <img src="images/hero/kitchen.JPG" alt="Bespoke kitchen">
+          <h2 class="slide-title">Kitchens</h2>
+        </div>
+        <div class="swiper-slide">
+          <img src="images/hero/tv-unit.jpg" alt="Custom TV unit">
+          <h2 class="slide-title">TV Units</h2>
+        </div>
+        <div class="swiper-slide">
+          <img src="images/hero/wardrobe.png" alt="Fitted wardrobe">
+          <h2 class="slide-title">Wardrobes</h2>
+        </div>
+        <div class="swiper-slide">
+          <img src="images/hero/wine-rack.jpg" alt="Bespoke wine storage">
+          <h2 class="slide-title">Wine Storage</h2>
+        </div>
       </div>
     </div>
   </section>
@@ -130,6 +183,7 @@
 
 
   <div id="footer-placeholder"></div>
+  <script defer src="sections/rotating-gallery/script.js"></script>
   <script>
     function loadPartial(url, placeholderId) {
       fetch(url)
