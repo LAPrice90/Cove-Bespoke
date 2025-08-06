@@ -211,6 +211,16 @@
 @media (min-width: 1024px) {
   .process-tabs-wrapper {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 40px; /* add extra bottom margin */
+  }
+  .process-tabs-wrapper .tabs-swiper {
+    margin: 0 20px; /* adjust value as needed */
+  }
+}
+
+/* Adjust gap on mobile between the text and the images */
+@media (max-width: 600px) {
+  .process-copy {
+    margin-bottom: 0px; /* reduce as needed */
   }
 }
