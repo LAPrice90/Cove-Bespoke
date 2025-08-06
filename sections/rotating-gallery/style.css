@@ -1,6 +1,5 @@
 /* ─── rotating-gallery (inherits Installation-Process layout) ───────────── */
 .rotating-gallery-process {
-  background: var(--c-bg);
   text-align: center;
   position: relative;
 }
@@ -24,6 +23,7 @@
   gap:16px;
   margin-bottom:0;
 }
+
 .process-tabs .tab{
   font-family:var(--font-sans);
   font-size:14px;
@@ -37,6 +37,7 @@
   cursor:pointer;
   transition:.3s;
 }
+
 .process-tabs .tab:hover,
 .process-tabs .tab.active{
   background:var(--color-blue);
@@ -59,7 +60,6 @@
   height:36px;
   border-radius:50%;
   border:1px solid #ccc;
-  background:#fff;
   box-shadow:0 2px 6px rgba(0,0,0,.1);
   display:flex;
   align-items:center;
@@ -150,8 +150,6 @@
 .tabs-swiper {
   overflow: hidden;
   padding: 0 16px;
-  display: block;
-  width: 100%;
 }
 
 .tabs-swiper .swiper-wrapper {
@@ -168,4 +166,18 @@
 
 .rotating-gallery-process .process-copy {
   padding: 0 1.5rem; /* match install section's side padding */
+}
+
+/* Force pill track to behave like a normal flex row, never a swiper row */
+.tabs-swiper .swiper-wrapper {
+  display: flex !important;
+  gap: 16px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  transform: none !important;  /* neutralize any swiper transform */
+}
+
+.tabs-swiper .swiper-slide {
+  width: auto !important;      /* beat .swiper-slide { width:100% } */
+  flex: 0 0 auto !important;
 }
