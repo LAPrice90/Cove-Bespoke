@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — Cove Bespoke</title>
 
-  <!-- Global styles -->
+  <!-- Global styles (same stack as index) -->
   <link rel="stylesheet" href="style/variables.css">
   <link rel="stylesheet" href="style/base.css">
   <link rel="stylesheet" href="style/layout.css">
@@ -15,158 +15,129 @@
   <link rel="stylesheet" href="style/forms.css">
   <link rel="stylesheet" href="style/animations.css">
 
-  <!-- Section styles -->
+  <!-- Section styles in use -->
   <link rel="stylesheet" href="sections/hero/style.css">
+  <link rel="stylesheet" href="sections/intro-banner/style.css">
   <link rel="stylesheet" href="sections/media-left/style.css">
   <link rel="stylesheet" href="sections/media-right/style.css">
-  <link rel="stylesheet" href="sections/timeline/style.css">
-  <link rel="stylesheet" href="sections/testimonials/style.css">
   <link rel="stylesheet" href="sections/cta-banner/style.css">
 </head>
-
 <body>
-  <!-- Header -->
+
+  <!-- Header placeholder (same pattern as index) -->
   <div id="header-placeholder"></div>
 
-  <!-- Studio Portrait Hero -->
+  <!-- Hero -->
   <section class="hero-section">
-    <img class="hero-bg" src="images/about/studio-hero" alt="Cove Bespoke workshop in County Wicklow" loading="lazy" />
+    <img class="hero-bg" src="images/about/studio-hero.jpg" alt="Cove Bespoke workshop in County Wicklow" loading="lazy" />
     <div class="hero-content">
       <h1>Meet Cove Bespoke</h1>
-      <p>Thoughtful design and handmade craftsmanship from County Wicklow.</p>
-      <a href="contact.html" class="btn btn--primary">Start Your Project</a>
+      <p>Design-led, handcrafted kitchens and interiors made in Wicklow.</p>
+      <a href="/portfolio.html" class="btn btn--primary">Explore Our Work</a>
+    </div>
+  </section>
+
+  <!-- Intro banner -->
+  <section class="intro-banner">
+    <div class="intro-banner__content">
+      <h1>Quiet Luxury, Crafted for Life</h1>
+      <div class="intro-banner__text-block">
+        <p>We are a focused studio creating bespoke kitchens and interior joinery for homeowners, architects, and designers. Every commission is made to order in our County Wicklow workshop using time-honoured craftsmanship and modern digital design tools.</p>
+        <p>From first sketches to final fit, your project is handled personally. We design with clarity, build from raw materials, spray finishes in-house, and install with care across Wicklow and surrounding areas.</p>
+      </div>
     </div>
   </section>
 
   <!-- Our Philosophy (media-left) -->
-  <section id="our-philosophy" class="section media-left" aria-labelledby="philosophy-heading">
-    <h1 id="philosophy-heading" class="media-left__heading">Our Philosophy</h1>
+  <section class="section media-left" aria-labelledby="philosophy-heading">
     <div class="media-left__wrapper">
       <figure class="media-left__image">
-        <img src="images/about/materials-detail" alt="Close-up of hand-finished joinery and materials" loading="lazy" />
+        <img src="images/about/philosophy.jpg" alt="Joinery detail showing hand-finished craftsmanship" loading="lazy">
       </figure>
       <div class="media-left__content">
-        <p class="subheading">Quiet luxury, crafted for life.</p>
-        <p class="intro">
-          Cove Bespoke creates kitchens and interiors that feel calm, resolved, and timeless. Each project begins with careful listening and ends with a space that fits the way you live. We design with clarity, build with care, and finish with precision.
-        </p>
-        <p class="intro">
-          Everything is made to order in our Wicklow workshop using premium materials and traditional methods supported by modern tooling. The goal is simple. Lasting beauty, everyday ease, and craftsmanship you can feel in every detail.
-        </p>
+        <h2 id="philosophy-heading">Our Philosophy</h2>
+        <p class="subheading">Timeless design. True bespoke. Built to endure.</p>
+        <p class="intro">Cove Bespoke exists to create spaces that feel calm, considered, and personal. We believe luxury is quiet confidence: honest materials, refined proportion, and impeccable finishing that will look and feel right for years to come.</p>
+        <p class="intro">There are no catalogue parts. Every cabinet, shelf, and panel is sized to your architecture and made by hand for a precise fit and a lasting result.</p>
       </div>
     </div>
   </section>
 
-  <!-- Design & Visualisation (media-right) -->
-  <section id="design-visuals" class="media-right" aria-labelledby="design-visuals-heading">
+  <!-- A Personal Studio (media-right) -->
+  <section class="media-right" aria-labelledby="studio-heading">
     <div class="media-right__wrapper">
       <div class="media-right__content">
-        <h2 id="design-visuals-heading" class="media-right__heading">Design With Clarity</h2>
-        <p class="subheading">CAD plans and photorealistic visuals.</p>
-        <p class="intro">
-          We use advanced digital design tools to plan layouts, refine proportions, and present clear 3D visuals. You will see how cabinetry, appliances, lighting, and finishes come together before we cut a single panel.
-        </p>
-        <p class="intro">
-          This is a collaborative stage that removes uncertainty and lets you make confident choices with full visibility of the final result.
-        </p>
+        <h2 id="studio-heading" class="media-right__heading">A Personal Studio</h2>
+        <p class="subheading">One maker. One point of contact.</p>
+        <p class="intro">This is a personal service from start to finish. You speak directly with the person who designs, builds, finishes, and installs your project. Communication is clear, decisions are thoughtful, and the craftsmanship is consistent throughout.</p>
+        <p class="intro">We work discreetly and efficiently on site to keep your home calm during installation.</p>
       </div>
       <figure class="media-right__image">
-        <img src="images/about/cad-visual" alt="Photorealistic CAD render of a bespoke kitchen" loading="lazy" />
+        <img src="images/about/studio-portrait.jpg" alt="Maker at work in the Cove Bespoke workshop" loading="lazy">
       </figure>
     </div>
   </section>
 
-  <!-- Handmade & In-House Finishing (media-left) -->
-  <section id="handmade" class="section media-left" aria-labelledby="handmade-heading">
-    <h1 id="handmade-heading" class="media-left__heading">Handmade In Wicklow</h1>
+  <!-- How We Work (media-left) -->
+  <section class="section media-left" aria-labelledby="process-heading">
     <div class="media-left__wrapper">
       <figure class="media-left__image">
-        <img src="images/about/workshop-craft" alt="Cabinetmaking by hand in the workshop" loading="lazy" />
+        <img src="images/services/cad-visual.jpg" alt="Photorealistic CAD visual of a bespoke kitchen design" loading="lazy">
       </figure>
       <div class="media-left__content">
-        <p class="subheading">From raw boards to final fit.</p>
-        <p class="intro">
-          Every element is built from scratch by a single, focused team. We prepare, assemble, and fine-tune each component by hand. Nothing is off the shelf. This approach delivers strength, accuracy, and a refined finish across every project.
-        </p>
+        <h2 id="process-heading">How We Work</h2>
+        <p class="subheading">From first conversation to final fitting.</p>
+        <ul class="steps">
+          <li><strong>Discovery</strong><br>We begin with a detailed conversation and site review to understand your architecture, lifestyle, and priorities.</li>
+          <li><strong>Design</strong><br>Accurate CAD plans and photorealistic visuals let you see proportions, storage, and finishes before anything is built.</li>
+          <li><strong>Craft</strong><br>Each component is handmade in our Wicklow workshop from selected timbers and board materials for strength and longevity.</li>
+          <li><strong>Finish</strong><br>In-house spray facilities deliver smooth, durable finishes in your chosen colour and sheen.</li>
+          <li><strong>Install</strong><br>We deliver and install with precision, ensuring alignments, reveals, and motion are perfect.</li>
+        </ul>
         <ul class="media-left__list">
-          <li><span>Made to order</span> cabinetry, wardrobes, bars, and media walls</li>
-          <li><span>In-house spray finishing</span> for colour, sheen, and durability</li>
-          <li><span>Premium materials</span> selected for longevity and feel</li>
-          <li><span>Seamless installation</span> handled by the makers themselves</li>
-          <li><span>Serving Wicklow</span> and surrounding areas</li>
+          <li><span>Made to order</span> for kitchens, wardrobes, media units, wine rooms, and interior joinery</li>
+          <li><span>Digital design</span> with 3D visuals for clarity and confidence</li>
+          <li><span>In-house spraying</span> for colour fidelity and consistency</li>
+          <li><span>Based in Wicklow</span> serving the surrounding areas</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Timeline: The Bespoke Journey -->
-  <section id="timeline" class="timeline" aria-labelledby="timeline-heading">
-    <h2 id="timeline-heading" class="timeline__heading">Your Bespoke Journey</h2>
-    <div class="timeline__track">
-      <div class="timeline__item">
-        <h3 class="timeline__title">Discovery</h3>
-        <p class="timeline__text">A personal consultation to understand your space, style, and priorities.</p>
+  <!-- Materials & Partners (media-right) -->
+  <section class="media-right" aria-labelledby="materials-heading">
+    <div class="media-right__wrapper">
+      <div class="media-right__content">
+        <h2 id="materials-heading" class="media-right__heading">Materials & Detail</h2>
+        <p class="subheading">Quality you can see and feel.</p>
+        <p class="intro">We specify robust carcasses, premium hardwoods and veneers, high-performance paints, and dependable European hardware. Interiors are planned for real life with quiet motion, durable finishes, and thoughtful storage.</p>
+        <ul class="media-left__list">
+          <li><span>Selected hardwoods</span> and stable board construction</li>
+          <li><span>Premium paint systems</span> sprayed in-house</li>
+          <li><span>Quality hardware</span> with soft-close motion and long-term reliability</li>
+          <li><span>Stone, solid surface, or timber</span> for worktops by preference</li>
+        </ul>
       </div>
-      <div class="timeline__item">
-        <h3 class="timeline__title">Concept Design</h3>
-        <p class="timeline__text">Measured surveys, CAD plans, and visuals to refine layout and materials.</p>
-      </div>
-      <div class="timeline__item">
-        <h3 class="timeline__title">Craft & Finish</h3>
-        <p class="timeline__text">Handmade joinery in our workshop with in-house spray finishing.</p>
-      </div>
-      <div class="timeline__item">
-        <h3 class="timeline__title">Installation</h3>
-        <p class="timeline__text">Delivered and fitted with precision by the makers who built it.</p>
-      </div>
-      <div class="timeline__item">
-        <h3 class="timeline__title">Aftercare</h3>
-        <p class="timeline__text">Ongoing support to keep your space looking and performing at its best.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Strip -->
-  <section id="testimonials" class="testimonials" aria-labelledby="testimonials-heading">
-    <h2 id="testimonials-heading" class="testimonials__heading">What Clients Say</h2>
-    <div class="testimonials__wrap">
-      <figure class="testimonial">
-        <blockquote class="testimonial__quote">
-          The design process was clear and enjoyable. The finished kitchen feels calm and beautifully made.
-        </blockquote>
-        <figcaption class="testimonial__meta">— A. Murphy, Dublin</figcaption>
-      </figure>
-
-      <figure class="testimonial">
-        <blockquote class="testimonial__quote">
-          Impeccable craftsmanship and a seamless install. Every line and door feels precise and considered.
-        </blockquote>
-        <figcaption class="testimonial__meta">— S. O’Connor, Wicklow</figcaption>
-      </figure>
-
-      <figure class="testimonial">
-        <blockquote class="testimonial__quote">
-          The visuals helped us make confident decisions. The result is elegant and very practical.
-        </blockquote>
-        <figcaption class="testimonial__meta">— L. Byrne, Greystones</figcaption>
+      <figure class="media-right__image">
+        <img src="images/about/materials.jpg" alt="Material swatches including timber, paint and hardware" loading="lazy">
       </figure>
     </div>
   </section>
 
-  <!-- CTA Banner -->
+  <!-- CTA -->
   <section class="cta-banner" aria-labelledby="cta-heading">
-    <hr class="cta-banner__line" />
-    <h2 id="cta-heading" class="cta-banner__heading">Ready To Begin?</h2>
-    <p class="cta-banner__sub">
-      Share your plans and we will guide you through design, craft, and installation with a personal, end-to-end service.
-    </p>
-    <a href="contact.html" class="btn btn--primary">Book a Consultation</a>
+    <hr class="cta-banner__line">
+    <h2 id="cta-heading" class="cta-banner__heading">Ready to Begin Your Project?</h2>
+    <p class="cta-banner__sub">Share your plans and we will prepare a clear, design-led proposal tailored to your space.</p>
+    <a href="contact.html" class="btn btn--pill">
+      <span class="btn-text">Request a Consultation</span>
+      <span class="btn-dot"></span>
+    </a>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer placeholder -->
   <div id="footer-placeholder"></div>
 
-  <!-- Optional: header/footer injectors if you are using them elsewhere -->
   <script>
     function loadPartial(url, placeholderId) {
       fetch(url)
@@ -179,7 +150,6 @@
           const placeholder = document.getElementById(placeholderId);
           placeholder.replaceWith(fragment);
 
-          // Include any stylesheets from the partial's <head>
           doc.head
             .querySelectorAll('link[rel="stylesheet"], style')
             .forEach(el => {
@@ -193,7 +163,6 @@
               }
             });
 
-          // Re-execute any inline or external scripts
           doc.querySelectorAll('script').forEach(src => {
             const s = document.createElement('script');
             if (src.src) { s.src = src.src; } else { s.textContent = src.textContent; }
