@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact – Cove Bespoke</title>
+  <title>Contact &mdash; Cove Bespoke</title>
   <link rel="stylesheet" href="style/variables.css">
   <link rel="stylesheet" href="style/base.css">
   <link rel="stylesheet" href="style/layout.css">
@@ -11,28 +11,49 @@
   <link rel="stylesheet" href="style/buttons.css">
   <link rel="stylesheet" href="style/forms.css">
   <link rel="stylesheet" href="style/animations.css">
+  <link rel="stylesheet" href="sections/page-title/style.css">
 </head>
-<body>
+<body class="contact-page">
   <div id="header-placeholder"></div>
 
-  <section class="contact-form">
-    <h1 class="fade-in">Contact</h1>
-    <p class="fade-in">Please tell us about your project and we will be in touch.</p>
-    <form class="fade-in">
+  <section class="page-title contact-hero fade-in" aria-labelledby="contact-title">
+    <div class="contact-hero__grid">
+      <div class="contact-hero__left">
+        <h1 id="contact-title" class="page-title__heading">Start your bespoke journey</h1>
+      </div>
+      <div class="contact-hero__right">
+        <p class="contact-hero__intro">Every project begins with a conversation. Share a few details and Joel will be in touch personally to talk through your ideas and next steps.</p>
+        <p class="contact-hero__intro">Prefer to reach out directly? You can email any time.</p>
+        <div class="contact-card fade-in">
+          <p><strong>Joel Price &mdash; Cove Bespoke</strong></p>
+          <p>Email: <a href="mailto:covebespoke@gmail.com">covebespoke@gmail.com</a></p>
+          <p>Phone: <a href="tel:+353852567638">085 256 7638</a></p>
+          <p class="response-note">We typically reply within one working day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-form" aria-labelledby="project-enquiry">
+    <div class="contact-form__inner">
+      <h2 id="project-enquiry" class="page-title__heading fade-in">Project enquiry</h2>
+      <form class="fade-in">
       <label>Name
-        <input type="text" name="name" required>
+        <input type="text" name="name" required placeholder="Your full name">
       </label>
       <label>Email
-        <input type="email" name="email" required>
+        <input type="email" name="email" required placeholder="Your best email">
       </label>
-      <label>Phone
-        <input type="tel" name="phone">
+      <label>Phone (optional)
+        <input type="tel" name="phone" placeholder="Optional &mdash; if you&rsquo;d like a call back">
       </label>
       <label>Project Details
-        <textarea name="details" rows="6" required></textarea>
+        <textarea name="details" rows="6" required placeholder="Tell us about your space, timing, and any must-haves&hellip;"></textarea>
       </label>
+      <p class="form-note fade-in">Your enquiry is private and will be answered directly by Joel.</p>
       <button type="submit" class="btn btn--primary fade-in">Send Enquiry</button>
-    </form>
+      </form>
+    </div>
   </section>
 
   <div id="footer-placeholder"></div>
@@ -75,3 +96,4 @@
   </script>
 </body>
 </html>
+
