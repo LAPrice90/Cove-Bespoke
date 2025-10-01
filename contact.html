@@ -10,14 +10,15 @@
   <link rel="stylesheet" href="style/components.css">
   <link rel="stylesheet" href="style/buttons.css">
   <link rel="stylesheet" href="style/forms.css">
+  <link rel="stylesheet" href="style/animations.css">
 </head>
 <body>
   <div id="header-placeholder"></div>
 
   <section class="contact-form">
-    <h1>Contact</h1>
-    <p>Please tell us about your project and we will be in touch.</p>
-    <form>
+    <h1 class="fade-in">Contact</h1>
+    <p class="fade-in">Please tell us about your project and we will be in touch.</p>
+    <form class="fade-in">
       <label>Name
         <input type="text" name="name" required>
       </label>
@@ -30,7 +31,7 @@
       <label>Project Details
         <textarea name="details" rows="6" required></textarea>
       </label>
-      <button type="submit" class="btn btn--primary">Send Enquiry</button>
+      <button type="submit" class="btn btn--primary fade-in">Send Enquiry</button>
     </form>
   </section>
 

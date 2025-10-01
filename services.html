@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="style/components.css">
   <link rel="stylesheet" href="style/buttons.css">
   <link rel="stylesheet" href="style/forms.css">
+  <link rel="stylesheet" href="style/animations.css">
   <link rel="stylesheet" href="sections/page-title/style.css">
   <link rel="stylesheet" href="sections/media-left/style.css">
   <link rel="stylesheet" href="sections/media-right/style.css">
@@ -18,16 +19,16 @@
 <body>
   <div id="header-placeholder"></div>
 
-  <section class="page-title fade-in" aria-labelledby="page-h1">
-    <h1 id="page-h1" class="page-title__heading">Services</h1>
+  <section class="page-title" aria-labelledby="page-h1">
+    <h1 id="page-h1" class="page-title__heading fade-in">Services</h1>
   </section>
 
   <section class="media-left" aria-labelledby="services-overview-heading">
     <div class="media-left__wrapper">
-      <figure class="media-left__image">
+      <figure class="media-left__image fade-in">
         <img src="images/projects/gloss-white-kitchen/2.JPG" alt="Gloss white kitchen cabinetry detail" />
       </figure>
-      <div class="media-left__content">
+      <div class="media-left__content fade-in">
         <h2 id="services-overview-heading">A Complete Bespoke Service</h2>
         <p class="subheading">From first sketch to final fit.</p>
         <p class="intro">
@@ -43,7 +44,7 @@
   <!-- 1. Consultation & Design media-right -->
   <section class="section media-right" aria-labelledby="design-consultation-heading">
     <div class="media-right__wrapper">
-      <div class="media-right__content">
+      <div class="media-right__content fade-in">
         <h2 id="design-consultation-heading">Consultation & Design</h2>
         <p class="subheading">It starts with how you live.</p>
         <p class="intro">
@@ -53,7 +54,7 @@
           This process is collaborative, practical, and entirely focused on how you use your home. It lays the foundation for truly bespoke interiors, designed with clarity, not guesswork.
         </p>
       </div>
-      <figure class="media-right__image">
+      <figure class="media-right__image fade-in">
         <img src="images/projects/dark-porcelain-kitchen/5.JPG" alt="Dark porcelain kitchen installation">
       </figure>
     </div>
@@ -63,10 +64,10 @@
   <!-- 2. Photorealistic CAD Visuals media-left -->
   <section class="media-left" aria-labelledby="cad-visuals-heading">
     <div class="media-left__wrapper">
-      <figure class="media-left__image">
+      <figure class="media-left__image fade-in">
         <img src="images/projects/light-grey-handleless-kitchen/4.JPG" alt="Light grey handleless kitchen design example">
       </figure>
-      <div class="media-left__content">
+      <div class="media-left__content fade-in">
         <h2 id="cad-visuals-heading">Photorealistic CAD Visuals</h2>
         <p class="subheading">See it before it's made.</p>
         <p class="intro">
@@ -83,7 +84,7 @@
   <!-- 3. Handmade Craftsmanship media-right -->
   <section class="section media-right" aria-labelledby="craftsmanship-heading">
     <div class="media-right__wrapper">
-      <div class="media-right__content">
+      <div class="media-right__content fade-in">
         <h2 id="craftsmanship-heading">Handmade in Wicklow</h2>
         <p class="subheading">Crafted from raw materials, not catalogues.</p>
         <p class="intro">
@@ -93,7 +94,7 @@
           This means stronger structures, finer details, and a level of quality that simply cannot be matched by mass production.
         </p>
       </div>
-      <figure class="media-right__image">
+      <figure class="media-right__image fade-in">
         <img src="images/projects/walnut-winerack/6.jpg" alt="Walnut wine rack detail in workshop">
       </figure>
     </div>
@@ -103,10 +104,10 @@
   <!-- 4. In-House Spray Finishing media-left -->
   <section class="media-left" aria-labelledby="spray-finishing-heading">
     <div class="media-left__wrapper">
-      <figure class="media-left__image">
+      <figure class="media-left__image fade-in">
         <img src="images/projects/media-wall-display-unit/3.JPG" alt="Media wall cabinetry during finishing">
       </figure>
-      <div class="media-left__content">
+      <div class="media-left__content fade-in">
         <h2 id="spray-finishing-heading">In-House Spray Finishing</h2>
         <p class="subheading">Your colour, your finish, controlled in house.</p>
         <p class="intro">
@@ -123,7 +124,7 @@
   <!-- 5. Delivery & Installation media-right -->
   <section class="section media-right" aria-labelledby="installation-heading">
     <div class="media-right__wrapper">
-      <div class="media-right__content">
+      <div class="media-right__content fade-in">
         <h2 id="installation-heading">Delivery & Installation</h2>
         <p class="subheading">Fitted with care, not just speed.</p>
         <p class="intro">
@@ -133,7 +134,7 @@
           From alignments to soft close fittings, we make sure every element works exactly as intended. No shortcuts, no guesswork.
         </p>
       </div>
-      <figure class="media-right__image">
+      <figure class="media-right__image fade-in">
         <img src="images/projects/painted-white-hallway/2.JPG" alt="Painted hallway joinery installation">
       </figure>
     </div>
@@ -143,10 +144,10 @@
   <!-- 6. Complete Bespoke Interiors media-left -->
   <section class="media-left" aria-labelledby="complete-service-heading">
     <div class="media-left__wrapper">
-      <figure class="media-left__image">
+      <figure class="media-left__image fade-in">
         <img src="images/projects/porcelain-kitchen/1.PNG" alt="Porcelain kitchen elevation render">
       </figure>
-      <div class="media-left__content">
+      <div class="media-left__content fade-in">
         <h2 id="complete-service-heading">The Full Bespoke Service</h2>
         <p class="subheading">One craftsman. One point of contact.</p>
         <p class="intro">
@@ -164,26 +165,26 @@
   <link rel="stylesheet" href="sections/media-scroller/style.css">
 
   <section class="media-scroller media-scroller--left" aria-labelledby="featured-projects-heading">
-    <h2 id="featured-projects-heading" class="scroller-heading">
+    <h2 id="featured-projects-heading" class="scroller-heading fade-in">
       Project Highlights
     </h2>
-    <div class="scroller-track">
-      <div class="scroller-item">
+    <div class="scroller-track fade-in">
+      <div class="scroller-item fade-in">
         <img src="images/projects/classic-shaker-kitchen/cover.JPG" alt="Classic shaker kitchen in painted finish">
         <h3>Classic Shaker Kitchen</h3>
         <p>Bespoke Kitchen Project</p>
       </div>
-      <div class="scroller-item">
+      <div class="scroller-item fade-in">
         <img src="images/projects/dark-porcelain-kitchen/cover.JPG" alt="Dark porcelain kitchen with stone worktops">
         <h3>Dark Porcelain Kitchen</h3>
         <p>Modern Kitchen Design</p>
       </div>
-      <div class="scroller-item">
+      <div class="scroller-item fade-in">
         <img src="images/projects/dark-shaker-wardrobe/cover.JPG" alt="Dark shaker wardrobe with brass handles">
         <h3>Dark Shaker Wardrobe</h3>
         <p>Tailored Wardrobe Solution</p>
       </div>
-      <div class="scroller-item">
+      <div class="scroller-item fade-in">
         <img src="images/projects/home-bar-cabinetry/cover.jpg" alt="Custom home bar cabinetry with shelving">
         <h3>Home Bar Cabinetry</h3>
         <p>Entertaining Space Feature</p>
@@ -198,15 +199,15 @@
   <section class="cta-banner" aria-labelledby="cta-heading">
     <hr class="cta-banner__line">
 
-    <h2 id="cta-heading" class="cta-banner__heading">
+    <h2 id="cta-heading" class="cta-banner__heading fade-in">
       Ready to Begin Your Bespoke Journey?
     </h2>
 
-    <p class="cta-banner__sub">
+    <p class="cta-banner__sub fade-in">
       Speak with us to explore your ideas, review design options, and take the first step toward a space crafted uniquely for you.
     </p>
 
-    <a href="contact.html" class="btn btn--primary">Start Your Project</a>
+    <a href="contact.html" class="btn btn--primary fade-in">Start Your Project</a>
   </section>
 
 
